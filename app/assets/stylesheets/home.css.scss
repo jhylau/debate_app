@@ -1,0 +1,196 @@
+@import 'bootstrap';
+
+//background
+.body-background {
+  background-image: url('grey_wash_wall.png');
+}
+ //bracket
+table.bracket {
+    border-collapse: collapse;
+    border: none;
+}
+
+.bracket td {
+    vertical-align: middle;
+    width: 30em;
+    margin: 0;
+    padding: 10px;
+}
+
+.bracket td p {
+    border-bottom: solid 1px black;
+    margin: 0;
+    padding: 5px 5px 5px 5px;
+}
+
+.bracket th{
+    text-align:center;
+}
+
+// Navbar
+.navbar-inner {border:none; border-radius:none; background-image: url('img02.jpg')}
+.navbar {}
+.navbar-inner .container {width:960px;}
+ul.nav2 li a{font-weight:bold; color:white;}
+.newsfeed-container {
+  border: 1px solid lightgray;
+  small {
+    color: #4183C4;
+  }
+}
+
+//tables
+.table-rankings {
+  border:none;
+}
+
+//Hero-Unit
+.hero-unit {
+  background-image: url('romney-obama-debate.jpg');
+  color: white;
+}
+//Thumbnails
+.thumbnails{padding-left: 10px;}
+.thumbnail {border: solid 5px lightgrey;
+img{
+  border: solid 1px black;
+  height:200px;
+  width: 300px;
+}
+}
+.user-feed{padding-bottom: 10px}
+.active{border-bottom-color:red; box-shadow: none;}
+.news-feed {
+    list-style:none;
+  li{
+  padding-top: 20px;
+  padding-bottom:20px;
+  border-bottom: 1px solid #F1F1F1;
+}
+i {padding-right: 11px;}
+span{
+  color: lightgrey;
+}
+}
+
+//Body
+
+body {position:relative; z-index:1; height:100%; font-family:"Source Sans Pro",Sans-Serif,Helvetica,Arial}
+
+.repository-container {
+  overflow: auto;
+  margin-top: 20px;
+  border: 1px solid #dddddd;
+  .repository-header {
+    width: 380px;
+    overflow:auto;
+    display: inline-block;
+    background-color: #F1F1F1;
+    p {
+      display: inline-block;
+      float: left;
+      margin-top: 5px;
+      margin-left: 5px;
+    }
+    button {
+      display: inline-block;
+      float: right;
+      margin-right: 4px;
+      margin-top: 4px;
+    }
+    #repo-quantity {
+      color: lightgray;
+    }
+  }  
+  .repository-search {
+    background: #fafafb;
+    padding-left: 5px; 
+    #repo-searchbox {
+      width: 340px;
+    }
+  }
+  ul.nav-tabs {
+    li a {
+      color: gray;
+    }
+  }
+  .repository-list {
+    ul {
+      list-style: none;
+      margin: 0;
+      li {
+        padding: 5px;
+        border-top: 1px solid #e5e5e5;
+        i {
+          padding-right: 8px;
+        }
+        a {
+        }
+      }
+    }
+  }
+}
+
+
+//Text Areas
+textarea { resize:none; }
+
+//sitemap
+.sitemap {
+  margin-top: 30px;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  padding: 24px;
+  font-size: 12px;
+  display: -webkit-flex;
+  display: flex;
+  .sitemap-column {
+    flex: 1;
+    padding: 0 30px;
+    h4 {
+      font-size: 12px;
+      margin: 0px;
+    }
+    ul {
+      margin: 0;
+      list-style: none;
+    }
+    li {
+      a {
+      }
+    }
+  }
+}
+
+//footer
+.final-footer {
+  padding-top: 10px;
+  background-image: url('img02.jpg');
+  ul.footer-ul {
+    list-style: none;
+    li {
+      display: inline-block;
+      padding: 10px;
+    }
+    .footer-image {
+      vertical-align: center;
+      text-align: center;
+    }
+  }
+  img {
+    padding-left: 95px;
+    padding-top: 10px;
+  }
+  h5.copyright {
+    text-align: right;
+    font-weight: normal;
+    color: gray;
+    font-size: 12px;
+  }
+}
+
+.footer-image {
+  padding-left: 35px
+}
+
+

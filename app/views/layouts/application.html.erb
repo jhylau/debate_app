@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DebateApp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>DebateMe</title>
+  <%= stylesheet_link_tag  "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet"          href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,200italic,400italic,600italic">
 </head>
-<body>
+<body class="body-background">
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="container">     
+        <a class="brand" href="index.html"><strong>DebateMe</strong></a>
+        <form class="navbar-form pull-left" id="navbar-style">        
+          <input type="text" placeholder="Search for a debate topic.">
+        </form>
+        <ul class="nav nav2">
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li><a href="">SignOut</a></i></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li><a href="#"><img src="http://placekitten.com/20/20">&nbsp;<strong>Username</strong></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
 <%= yield %>
-
+<div class="final-footer"> 
+  <div class="container">    
+    <div class="row footer">
+            <ul class ="footer-ul span4">
+              <li><a href="#"><small>Terms of Service</small></a></li>
+              <li><a href="#"><small>Privacy</small></a></li>
+              <li><a href="#"><small>Contact</small></a></li>
+            </ul>
+          <div class="span3 footer-image"></div>
+          <div class="span4">
+            <h5 class="copyright">&copy; 2013 DebateMe, Inc. All Rights Reserved.</h5>
+          </div>          
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 </body>
 </html>

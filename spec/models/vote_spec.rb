@@ -18,6 +18,12 @@ describe Vote do
     expect(Vote.all.count).to eq(3)
   end
 
+  it "only allows each user to vote for each debate side once" do
+    vote = FactoryGirl.create(:vote, :debate_side_id => 1, :user_id => 1)
+    expect(FactoryGirl.build(:vote, :debate_side_id => 1, :user_id => 1)).to_not be_valid
+  end
+
+
   it "removes destroyed vote records" do
     3.times {FactoryGirl.create(:vote)}
     previous_count = Vote.count
