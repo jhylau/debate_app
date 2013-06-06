@@ -14,16 +14,16 @@
 ActiveRecord::Schema.define(:version => 20130531034409) do
 
   create_table "categories", :force => true do |t|
-    t.string   "title"
+    t.string   "title", :null => false
     t.string   "subtitle"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "comments", :force => true do |t|
-    t.integer  "debate_side_id"
-    t.integer  "user_id"
-    t.text     "content"
+    t.integer  "debate_side_id", :null => false
+    t.integer  "user_id", :null => false
+    t.text     "content", :null => false
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -34,43 +34,43 @@ ActiveRecord::Schema.define(:version => 20130531034409) do
     t.text     "conclusion"
     t.integer  "vote_count"
     t.string   "user_id"
-    t.string   "side"
-    t.integer  "debate_id"
+    t.string   "side", :null => false
+    t.integer  "debate_id", :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "debates", :force => true do |t|
-    t.integer  "topic_id"
+    t.integer  "topic_id", :null => false
     t.integer  "winner_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "topics", :force => true do |t|
-    t.string   "title"
-    t.string   "subtitle"
-    t.integer  "category_id"
+    t.string   "title", :null => false
+    t.string   "subtitle", :null => false
+    t.integer  "category_id", :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "password"
-    t.string   "email"
+    t.string   "username", :null => false
+    t.string   "password", :null => false
+    t.string   "email", :null => false
     t.integer  "ranking"
     t.integer  "debates_participated_in"
     t.integer  "tournaments_won"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "votes", :force => true do |t|
-    t.integer  "debate_side_id"
-    t.integer  "user_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer  "debate_side_id", :null => false
+    t.integer  "user_id", :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

@@ -28,16 +28,12 @@ table.bracket {
 }
 
 // Navbar
-.navbar-inner {border:none; border-radius:none; background-image: url('img02.jpg')}
-.navbar {}
-.navbar-inner .container {width:960px;}
-ul.nav2 li a{font-weight:bold; color:white;}
-.newsfeed-container {
-  border: 1px solid lightgray;
-  small {
-    color: #4183C4;
-  }
+.navbar-inner {border:none; border-radius:none; background-image: url('img02.jpg');
+ul.nav li a {
+  font-weight:bold; color: #D3D3D3;}
 }
+.navbar-inner .container {width:960px;}
+.navbar .brand {color:#D3D3D3}
 
 //tables
 .table-rankings {
@@ -51,12 +47,12 @@ ul.nav2 li a{font-weight:bold; color:white;}
 }
 //Thumbnails
 .thumbnails{padding-left: 10px;}
-.thumbnail {border: solid 5px lightgrey;
-img{
-  border: solid 1px black;
-  height:200px;
-  width: 300px;
-}
+.thumbnail {border: solid 5px lightgrey; background-color:#D3D3D3;
+  img{
+    border: solid 1px black;
+    height:200px;
+    width: 300px;
+  }
 }
 .user-feed{padding-bottom: 10px}
 .active{border-bottom-color:red; box-shadow: none;}
@@ -75,7 +71,7 @@ span{
 
 //Body
 
-body {position:relative; z-index:1; height:100%; font-family:"Source Sans Pro",Sans-Serif,Helvetica,Arial}
+body {position:relative; z-index:1; height:100%; font-family:"Source Sans Pro",Sans-Serif,Helvetica,Arial; color:black;}
 
 .repository-container {
   overflow: auto;
@@ -163,7 +159,7 @@ textarea { resize:none; }
 }
 
 //footer
-.final-footer {
+.footer {
   padding-top: 10px;
   background-image: url('img02.jpg');
   ul.footer-ul {
@@ -191,6 +187,20 @@ textarea { resize:none; }
 
 .footer-image {
   padding-left: 35px
+}
+
+//Form
+
+.form-style {
+  background-color: solid #D3D3D3;
+  margin-top: 5%;
+  .control-label {
+    font-size: 150%;
+    color: #D3D3D3;
+  }
+  .input {
+    font-size: 125%;
+  }
 }
 
 

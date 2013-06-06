@@ -1,5 +1,9 @@
 DebateApp::Application.routes.draw do
-  match '/' => 'homes#index'  # The priority is based upon order of creation:
+  root :to => 'homes#index'
+  resources :signup
+  resources :users
+  resources :debates
+  # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:

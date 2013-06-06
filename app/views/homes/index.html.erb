@@ -1,76 +1,26 @@
-<div class="container">
   <div class="row user-feed">
     <div class="hero-unit">
       <h1 class="text-center">DebateMe</h1>
-      <h2 class="text-center">Join a debate now.</h2>
+      <h2 class="text-center">The world's most important political debates</h2>
       <p class="text-center">
-<!--         <a class="btn btn-danger btn-large" name="JOIN NOW">
-          JOIN NOW
-        </a> -->
-        <%= link_to("JOIN NOW", {:controller => :homes, :action => :index, :name => "JOIN NOW"}, {class: "btn btn-danger btn-large"}) %>
+        <%= link_to("JOIN US", {:controller => :signup, :action => :index, :name => "JOIN US"}, {class: "btn btn-danger btn-large"}) %>
       </p>
     </div>
   </div>
   <div class = "row">
     <ul class="thumbnails row-pad-left">
-       <li class="span4">
-        <div class="thumbnail">
-          <%= image_tag("dream_rally_1.jpg", :alt => "test", :class => "img-rounded") %>
-          <h4 class="text-center">Immigration reform is needed</h4>
-          <p class="text-center">Barack.O vs. Mitt.R
-            <br><a class="btn btn-danger btn-small">read more</a>
-          </p>
-        </div>
-      </li>
-       <li class="span4">
-        <div class="thumbnail">
-          <%= image_tag("dream_rally_1.jpg", :alt => "test", :class => "img-rounded") %>
-          <h4 class="text-center">Immigration reform is needed</h4>
-          <p class="text-center">Barack.O vs. Mitt.R
-            <br><a class="btn btn-danger btn-small">read more</a>
-          </p>
-        </div>
-      </li>
-       <li class="span4">
-        <div class="thumbnail">
-          <%= image_tag("dream_rally_1.jpg", :alt => "test", :class => "img-rounded") %>
-          <h4 class="text-center">Immigration reform is needed</h4>
-          <p class="text-center">Barack.O vs. Mitt.R
-            <br><a class="btn btn-danger btn-small">read more</a>
-          </p>
-        </div>
-      </li>
+       <%= render 'debate_box' %>
+       <%= render 'debate_box' %>
+       <%= render 'debate_box' %>
     </ul>
   </div>
   <div class = "row">
     <ul class="thumbnails row-pad-left">
-       <li class="span4">
-        <div class="thumbnail">
-          <%= image_tag("dream_rally_1.jpg", :alt => "test", :class => "img-rounded") %>
-          <h4 class="text-center">Immigration reform is needed</h4>
-          <p class="text-center">Barack.O vs. Mitt.R
-            <br><a class="btn btn-danger btn-small">read more</a>
-          </p>
-        </div>
-      </li>
-       <li class="span4">
-        <div class="thumbnail">
-          <%= image_tag("dream_rally_1.jpg", :alt => "test", :class => "img-rounded") %>
-          <h4 class="text-center">Immigration reform is needed</h4>
-          <p class="text-center">Barack.O vs. Mitt.R
-            <br><a class="btn btn-danger btn-small">read more</a>
-          </p>
-        </div>
-      </li>
-       <li class="span4">
-        <div class="thumbnail">
-          <%= image_tag("dream_rally_1.jpg", :alt => "test", :class => "img-rounded") %>
-          <h4 class="text-center">Immigration reform is needed</h4>
-          <p class="text-center">Barack.O vs. Mitt.R
-            <br><a class="btn btn-danger btn-small">read more</a>
-          </p>
-        </div>
+        <%= render 'debate_box' %>
+       <%= render 'debate_box' %>
+       <%= render 'debate_box' %>
       </li>
     </ul>
   </div>
 </div>
+

@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Topic.create(
+  title: 'Immigration Reform',
+  subtitle: 'Immigration reform is needed',
+  category_id: 1
+  )
+
+Category.create(
+  title: 'Politics'
+  )
+
+Debate.create(
+  topic_id: 1,
+  )
