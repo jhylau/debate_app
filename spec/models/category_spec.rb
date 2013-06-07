@@ -8,11 +8,6 @@ describe Category do
     expect(category).to_not be_valid
   end
 
-  it "validates that I have specified a subtitle" do    
-    category.subtitle = nil
-    expect(category).to_not be_valid
-  end
-
    it "stores new category records" do
     3.times {FactoryGirl.create(:category)}
     expect(Category.all.count).to eq(3)

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Debate do
-  let(:debate) {debate = FactoryGirl.build(:debate)}
+  let(:debate) {FactoryGirl.build(:debate)}
 
   it "validates that I have specified a topic_id" do
     debate.topic_id = nil

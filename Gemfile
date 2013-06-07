@@ -4,7 +4,7 @@ gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'launchy'
 gem 'pg'
 gem 'pry'
 gem 'bootstrap-sass', '~> 2.3.1.0'

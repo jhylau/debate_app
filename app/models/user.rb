@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :votes
   has_many :comments
   has_many :debatesides
+  has_many :debates
 
   validates_presence_of :username, :password, :email
 end

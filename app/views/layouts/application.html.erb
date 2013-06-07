@@ -1,51 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DebateMe</title>
-  <%= stylesheet_link_tag  "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet"          href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,200italic,400italic,600italic">
-</head>
-<body class="body-background">
-  <header class="navbar">
-    <div class="navbar-inner">
-      <div class="container">     
-        <a class="brand" href="/"><strong>DebateMe!</strong></a>
-        <form class="navbar-form pull-left" id="navbar-style">        
-          <input type="text" placeholder="Search for a debate topic.">
-        </form>
-        <ul class="nav">
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Feedback</a></li>
-        </ul>
-        <ul class="nav pull-right">
-          <li><a href="">SignOut</a></i></li>
-        </ul>
-        <ul class="nav pull-right">
-          <li><a href="#"><img src="http://placekitten.com/20/20">&nbsp;<strong>Username</strong></a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-  <div class="container">
-  <%= yield %>
-  </div>
-  <div class="navbar-fixed-bottom navbar footer">
-      <div class="container">
-          <ul class ="footer-ul span4">
-            <li><a href="#"><small>Terms of Service</small></a></li>
-            <li><a href="#"><small>Privacy</small></a></li>
-            <li><a href="#"><small>Contact</small></a></li>
+  <head>
+    <title>DebateMe</title>
+    <%= stylesheet_link_tag  "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,200italic,400italic,600italic">
+  </head>
+  <body class="body-background">
+    <header class="navbar">
+        <div class="container">     
+          <a class="brand" href="/"><strong>DebateMe</strong></a>
+          <form class="navbar-form pull-left" id="navbar-style">        
+            <input type="text" placeholder="Search for a debate topic.">
+          </form>
+          <ul class="nav">
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Feedback</a></li>
           </ul>
-          <div class="span3 footer-image"></div>
-          <div class="span4">
-            <h5 class="copyright">&copy; 2013 DebateMe, Inc. All Rights Reserved.</h5>
-          </div>          
-      </div>
-  </div>
-</body>
+          <ul class="nav pull-right">
+            <li><a href="">SignOut</a></i></li>
+          </ul>
+          <ul class="nav pull-right">
+            <li><a href="#"><img src="http://placekitten.com/20/20">&nbsp;<strong>Username</strong></a></li>
+          </ul>
+        </div>
+    </header>
+    <div class="container">
+    <%= yield %>
+    </div>
+    <div class="navbar-fixed-bottom navbar footer">
+        <div class="container">
+            <ul class ="footer-ul span4">
+              <li><a href="#"><small>Terms of Service</small></a></li>
+              <li><a href="#"><small>Privacy</small></a></li>
+              <li><a href="#"><small>Contact</small></a></li>
+            </ul>
+            <div class="span3 footer-image"></div>
+            <div class="span4">
+              <h5 class="copyright">&copy; 2013 DebateMe, Inc. All Rights Reserved.</h5>
+            </div>          
+        </div>
+    </div>
+    <%= debug(params) if Rails.env.development? %>
+  </body>
 
 </html>

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Vote do
-  let(:vote) {vote = FactoryGirl.build(:vote)}
+  let(:vote) {FactoryGirl.build(:vote)}
 
   it "validates that I have specified a debate_side_id" do
     vote.debate_side_id = nil

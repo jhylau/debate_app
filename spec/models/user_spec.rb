@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-  let(:user) {user = FactoryGirl.build(:user)}
+  let(:user) {FactoryGirl.build(:user)}
 
   it "validates that I have specified a username" do
     user.username = nil

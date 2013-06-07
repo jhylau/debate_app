@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Comment do
-   let(:comment) {comment = FactoryGirl.build(:comment)}
+   let(:comment) {FactoryGirl.build(:comment)}
 
   it "validates that I have specified a content" do
     comment.content = nil

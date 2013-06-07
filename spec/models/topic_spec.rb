@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Topic do
-  let(:topic) {topic = FactoryGirl.build(:topic)}
+  let(:topic) {FactoryGirl.create(:topic)}
 
   it "validates that I have specified a category_id" do
     topic.category_id = nil
@@ -20,7 +20,7 @@ describe Topic do
 
    it "stores new topic records" do
     3.times {FactoryGirl.create(:topic)}
-    expect(Topic.all.count).to eq(3)
+    expect(Topic.count).to eq(3)
   end
 
   it "removes destroyed topic records" do
