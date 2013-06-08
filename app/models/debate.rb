@@ -1,6 +1,6 @@
 class Debate < ActiveRecord::Base
   attr_accessible :topic_id, :winner_id
-  has_many :debatesides
+  has_many :debate_sides
   belongs_to :topic
   belongs_to :winner, class_name: 'User'
 

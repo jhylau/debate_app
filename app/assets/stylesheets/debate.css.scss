@@ -2,3 +2,28 @@
   border:solid #D3D3D3;
   background-color: #D3D3D3;
 }
+
+.text-box {
+  textarea {
+    width: 440px;
+    background-color: #D3D3D3;
+    color: black;
+    border:#B3B3B3 solid 3px;
+    font-style: bold;
+  }
+}
+
+.submit {
+  background-color: green;
+  border: solid white 1px;
+  border-radius: 5px;
+  max-height: 15px;
+}
+
+.row .no-margin-left {
+  margin-left: 0px;
+}
+
+.margin-bottom-small {
+  margin-bottom:15px;
+}

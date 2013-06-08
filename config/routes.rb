@@ -2,7 +2,10 @@ DebateApp::Application.routes.draw do
   root :to => 'homes#index'
   resources :signup
   resources :users
-  resources :debates
+  resources :debates do
+    resources :debate_sides
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

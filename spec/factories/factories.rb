@@ -27,7 +27,7 @@ FactoryGirl.define do
     rebuttal    "rebuttal"
     conclusion    "conclusion"
     vote_count  10
-    side 'for'
+    side 'abc'
     debate
  end
 
