@@ -3,6 +3,7 @@ class HomesController < ApplicationController
     @debates = Debate.all.sample(6)
     @debate = Debate.create
     @category = Category.new
+    binding.pry
   end
 
 end

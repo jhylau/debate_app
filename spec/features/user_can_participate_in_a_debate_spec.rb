@@ -11,8 +11,12 @@ describe "User debates" do
     expect(page).to have_content('A stupid argument')
   end
 
-  it 'can submit a comment' do
-    
+  it 'can find debates to participate in' do
+    visit "/"
+    click_link "Participate"
+    save_and_open_page
+    click_link "Join"
+    expect(page).to have "Argument"
   end
   
 end

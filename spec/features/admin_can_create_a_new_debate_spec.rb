@@ -9,12 +9,10 @@ describe "Admin" do
   }
 
   it "can submit a new debate topic and subtopic" do
-    binding.pry
     visit "/"
     click_on "Create"
     fill_in 'Title', :with => 'A stupid topic'
     fill_in 'subtitle', :with => 'A stupid subtopic'
-    save_and_open_page
     click_link('Create')
     expect(page).to have_content('DebateMe')
   end

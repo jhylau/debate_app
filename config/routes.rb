@@ -2,12 +2,16 @@ DebateApp::Application.routes.draw do
   root :to => 'homes#index'
   resources :signup
   resources :users
-  resources :debates, only: [:index,:show] do
+  resources :debates do
     resources :debate_sides
   end
 
+  resources :topics do
+    resources :debates
+  end
+
   resources :categories do
-    resources :topics
+    resources :topics, except: [:index]
   end
   
   # The priority is based upon order of creation:

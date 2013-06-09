@@ -7,6 +7,7 @@ class TopicsController < ApplicationController
   end
 
   def index
-
+    @topic = Topic.all.sample(1).first
+    @debate = Debate.create(topic_id:@topic.id)
   end
 end

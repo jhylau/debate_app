@@ -1,0 +1,12 @@
+  <% t = @topic %>
+    <li class="span4">
+      <div class="thumbnail">
+        <%= image_tag("dream_rally_1.jpg", :alt => "test", :class => "img-rounded") %>
+        <h4 class="text-center"><%= t.title %></h4>
+        <h5 class="text-center"><%= t.subtitle %></h5>
+        <p class="text-center">
+           <%= link_to("Create Debate", new_debate_path, class: "btn btn-danger btn-small") %>
+           <%#= link_to("Argue Against", debate_path(d), class: "btn btn-danger btn-small") %>
+        </p>
+      </div>
+    </li>
