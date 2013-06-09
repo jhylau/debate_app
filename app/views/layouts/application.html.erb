@@ -16,9 +16,9 @@
             <input type="text" placeholder="Search for a debate topic.">
           </form>
           <ul class="nav">
-            <li><a href="#">Explore</a></li>
+            <li><%= link_to "Create", new_category_path(@category) %></li>
+            <li><a href="#">Participate</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Feedback</a></li>
           </ul>
           <ul class="nav pull-right">
             <li><a href="">SignOut</a></i></li>

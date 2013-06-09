@@ -12,4 +12,6 @@
   Category.create(:title => 'Politics')
 
   Debate.create(:topic_id => 1)
+
+  DebateSide.create(:topic_id => 1)
 end

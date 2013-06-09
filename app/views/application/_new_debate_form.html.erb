@@ -1,0 +1,20 @@
+<div class="thumbnail span3 offset4">
+  <%= form_for [@category,@topic] do |f| %>
+    <h3>Create a new topic</h3>
+    <div class="control-group">
+      <%= f.label :title, class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :title, id:'inputTitle', placeholder:'Title' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :subtitle, class: "control-label" %>
+      <div class="controls">
+        <%= f.text_field :subtitle, placeholder:'subtitle' %>
+      </div>
+    </div>
+    <div class="controls">
+      <%= f.submit 'Create', class: "btn-large btn btn-info" %>
+    </div> 
+  <% end %>
+</div>

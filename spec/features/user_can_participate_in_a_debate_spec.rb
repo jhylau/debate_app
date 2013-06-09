@@ -11,6 +11,8 @@ describe "User debates" do
     expect(page).to have_content('A stupid argument')
   end
 
-  it 'can submit a comment'
+  it 'can submit a comment' do
+    
+  end
   
 end

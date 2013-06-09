@@ -7,4 +7,8 @@ class DebatesController < ApplicationController
   def index
   end
 
+  def new
+    @debate = Debate.new
+  end
+
 end
