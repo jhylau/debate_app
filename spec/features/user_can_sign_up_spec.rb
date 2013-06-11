@@ -11,9 +11,9 @@ require 'spec_helper'
   # * When I register I am signed in
   # * I must specify a valid email, login, password and password confirmation
 
-describe "User Signs Up" do
+describe "User" do
   it "can click on a sign up button on the home page" do
-    FactoryGirl.build(:topic)
+    FactoryGirl.create(:debate_side)
     visit '/'
     click_link('JOIN US')
     expect(page).to have_button('Sign Up')

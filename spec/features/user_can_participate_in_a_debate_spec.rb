@@ -1,22 +1,26 @@
 require 'spec_helper'
 
 describe "User debates" do
+  let(:debate) {FactoryGirl.create(:debate)}
+  before(:each) do
+    debate_side_yes = FactoryGirl.create(:debate_side, debate: debate, side: 'yes')
+    debate_side_no = FactoryGirl.create(:debate_side, debate: debate, side: 'no')
+  end
+
   it "can submit an argument" do
-    debate = FactoryGirl.create(:debate)
-    debate_side_1 = FactoryGirl.create(:debate_side, debate: debate, side: 'For')
-    debate_side_2 = FactoryGirl.create(:debate_side, debate: debate, side: 'Against')
-    visit "/debates/#{debate.id}"
-    fill_in 'Argument', :with => 'A stupid argument'
-    click_link('submit argument')
-    expect(page).to have_content('A stupid argument')
+    visit "/"
+    page.all('.btn-small')[0].click
+    first(:css,"#debate_side_argument").set('Some text')
+    page.all('.btn')[2].click
+    expect(page).to have_content('Some text')
   end
 
   it 'can find debates to participate in' do
     visit "/"
-    click_link "Participate"
+    click_on "Participate"
     save_and_open_page
-    click_link "Join"
-    expect(page).to have "Argument"
+    click_on "read more"
+    expect(page).to have "vs."
   end
   
 end

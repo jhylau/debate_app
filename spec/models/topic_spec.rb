@@ -11,7 +11,7 @@ describe Topic do
    it "stores new topic records" do
     previous_count = Topic.count
     3.times {FactoryGirl.create(:topic)}
-    expect(Topic.count).to eq(3 + :topic)
+    expect(Topic.count).to eq(3 + previous_count)
   end
 
   it "removes destroyed topic records" do

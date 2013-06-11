@@ -4,7 +4,7 @@
     <h3 class="span3">Player 1</h3>
       <%= form_for [@debate_side_yes,@votes_yes] do |f| %>
         <p class=" span3">
-          <%= f.submit 'Vote', class:"btn btn-primary text-center" %>
+          <%= f.submit 'Vote', {class:"btn btn-primary text-center", name:"vote_yes"} %>
             <br>
             <strong><%= @debate_side_yes.votes.count %></strong>
         </p>
@@ -18,7 +18,7 @@
       <h3 class="span3">Player 2</h3>
       <%= form_for [@debate_side_no,@votes_no] do |f| %>
         <p class=" span3">
-          <%= f.submit 'Vote', class:"btn btn-primary text-center" %>
+          <%= f.submit 'Vote', class:"btn btn-primary text-center vote-no" %>
             <br>
             <strong><%= @debate_side_no.votes.count %></strong>
         </p>

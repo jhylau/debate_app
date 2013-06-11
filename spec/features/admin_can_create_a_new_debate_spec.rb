@@ -10,15 +10,12 @@ describe "Admin" do
 
   it "can submit a new debate topic and subtopic" do
     visit "/"
-    click_on "Create"
+    click_on "Admin"
     fill_in 'Title', :with => 'A stupid topic'
     fill_in 'subtitle', :with => 'A stupid subtopic'
     click_link('Create')
     expect(page).to have_content('DebateMe')
   end
 
-  it 'can submit a comment' do
-    
-  end
-  
+
 end

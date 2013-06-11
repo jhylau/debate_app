@@ -15,6 +15,7 @@ describe User do
 
   it "removes destroyed user records" do
     3.times {FactoryGirl.create(:user)}
+    previous_count = User.count
     User.first.destroy
     expect(User.all.count).to eq(previous_count-1)
   end

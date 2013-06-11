@@ -12,7 +12,7 @@ gem "simple_form", "~> 2.1.0"
 gem 'shoulda'
 gem 'guard-rspec'
 gem 'carrierwave'
-
+gem 'devise'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

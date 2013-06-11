@@ -1,6 +1,5 @@
 DebateApp::Application.routes.draw do
   root :to => 'homes#index'
-  
   resources :signup
   resources :users
   resources :debates, except: [:create] do

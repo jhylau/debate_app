@@ -4,8 +4,8 @@ describe Debate do
   let(:debate) {FactoryGirl.build(:debate)}
 
   it {should validate_presence_of(:topic_id)}
-  it {should belongs_to(:topic)}
-  it {should belongs_to(:winner)}
+  it {should belong_to(:topic)}
+  it {should belong_to(:winner)}
 
    it "stores new debate records" do
     previous_count = Debate.count
