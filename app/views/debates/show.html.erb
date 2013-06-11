@@ -4,6 +4,6 @@
 
 
 <div class="row">
-    <%= render 'update_yes_debate_form' %>
-    <%= render 'update_no_debate_form' %>
+    <%= render partial: 'update_debate_form', locals: {debate_side: @debate_side_yes} %>
+    <%= render partial: 'update_debate_form', locals: {debate_side: @debate_side_no} %>
 </div>

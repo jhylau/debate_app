@@ -1,9 +1,11 @@
 class HomesController < ApplicationController
   def index
-    @debates = Debate.all.sample(6)
+    @debates = []
+    6.times do
+      @debates << Debate.where("id in (select debate_id from debate_sides)").first
+    end
     @debate = Debate.create
     @category = Category.new
-    binding.pry
   end
 
 end

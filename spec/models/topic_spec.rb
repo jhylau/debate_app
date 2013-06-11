@@ -3,24 +3,15 @@ require 'spec_helper'
 describe Topic do
   let(:topic) {FactoryGirl.create(:topic)}
 
-  it "validates that I have specified a category_id" do
-    topic.category_id = nil
-    expect(topic).to_not be_valid
-  end
-
-  it "validates that I have specified a subtitle" do    
-    topic.subtitle = nil
-    expect(topic).to_not be_valid
-  end
-
-  it "validates that I have specified an title" do    
-    topic.title = nil
-    expect(topic).to_not be_valid
-  end
+  it {should validate_presence_of(:category_id)}
+  it {should validate_presence_of(:subtitle)}
+  it {should validate_presence_of(:title)}
+  it {should belong_to(:category)}
 
    it "stores new topic records" do
+    previous_count = Topic.count
     3.times {FactoryGirl.create(:topic)}
-    expect(Topic.count).to eq(3)
+    expect(Topic.count).to eq(3 + :topic)
   end
 
   it "removes destroyed topic records" do

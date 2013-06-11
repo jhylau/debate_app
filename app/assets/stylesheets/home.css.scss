@@ -51,6 +51,7 @@ ul.nav li a { color: #D3D3D3;}
   background-image: url('romney-obama-debate.jpg');
   color: white;
 }
+
 //Thumbnails
 .thumbnails{padding-left: 10px;}
 .thumbnail {border: solid 5px lightgrey; background-color:#D3D3D3;
@@ -76,8 +77,20 @@ span{
 }
 
 //Body
-
-body {position:relative; z-index:1; height:100%; font-family:"Source Sans Pro",Sans-Serif,Helvetica,Arial; color:black;}
+.body-div {
+  position: relative;
+  min-height: 100%;
+  body {
+    position:relative; 
+    z-index:1; 
+    height:100%; 
+    font-family:"Source Sans Pro",Sans-Serif,Helvetica,Arial;
+    color:black;
+  }
+  .footer-fix {
+    padding-bottom: 60px
+  }
+}
 
 .repository-container {
   overflow: auto;

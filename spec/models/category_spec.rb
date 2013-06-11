@@ -3,10 +3,7 @@ require 'spec_helper'
 describe Category do
   let(:category) {category = FactoryGirl.build(:category)}
 
-  it "validates that I have specified a title" do
-    category.title = nil
-    expect(category).to_not be_valid
-  end
+  it { should validate_presence_of(:title) }
 
    it "stores new category records" do
     3.times {FactoryGirl.create(:category)}

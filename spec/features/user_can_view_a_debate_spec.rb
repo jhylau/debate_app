@@ -20,6 +20,28 @@ describe "User views debate" do
     expect(page).to have_content('For')
   end
 
-  it 'can submit a comment'
-  
+  it 'can submit a comment' do
+    debate = FactoryGirl.create(:debate)
+    visit '/'
+    click_link('read more')
+    fill_in 'comment', with: "Hello World!"
+    click_on('Submit Comment')
+    expect(page).to have_content("Hello World!")
+  end 
+
+  it 'can vote on yes side of a debate' do
+    debate = FactoryGirl.create(:debate)
+    visit "/debates/#{debate.id}"
+    before = debate.votes.count
+    click_link('vote_yes')
+    expect(page).to have_content("#{before + 1}")
+  end
+
+   it 'can vote on no side of a debate' do
+    debate = FactoryGirl.create(:debate)
+    visit "/debates/#{debate.id}"
+    before = debate.votes.count
+    click_link('vote_no')
+    expect(page).to have_content("#{before + 1}")
+  end
 end

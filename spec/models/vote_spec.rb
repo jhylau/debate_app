@@ -3,19 +3,15 @@ require 'spec_helper'
 describe Vote do
   let(:vote) {FactoryGirl.build(:vote)}
 
-  it "validates that I have specified a debate_side_id" do
-    vote.debate_side_id = nil
-    expect(vote).to_not be_valid
-  end
-
-  it "validates that I have specified a user_id" do    
-    vote.user_id = nil
-    expect(vote).to_not be_valid
-  end
+  it {should validate_presence_of(:user_id)}
+  it {should validate_presence_of(:debate_side_id)}
+  it {should belong_to(:user)}  
+  it {should belong_to(:debate_side)}
 
   it "stores new vote records" do
+    previous_count = Vote.count
     3.times {FactoryGirl.create(:vote)}
-    expect(Vote.all.count).to eq(3)
+    expect(Vote.all.count).to eq(3 + previous_count)
   end
 
   it "only allows each user to vote for each debate side once" do

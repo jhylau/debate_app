@@ -6,12 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+Category.create(:title => 'Politics')
+Topic.create(:title => 'Immigration Reform',:subtitle => 'Immigration reform is needed',:category_id => 1)
 6.times do
-  Topic.create(:title => 'Immigration Reform',:subtitle => 'Immigration reform is needed',:category_id => 1)
-
-  Category.create(:title => 'Politics')
-
   Debate.create(:topic_id => 1)
 
-  DebateSide.create(:topic_id => 1)
+  DebateSide.create(:debate_id => 1, side: 'yes')
+
+  DebateSide.create(:debate_id => 1, side: 'no')
 end

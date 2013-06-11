@@ -1,5 +1,6 @@
+
 <div class="span6 no-margin-left">
-  <%= form_for [@debate,@debate_side] do |f| %>
+  <%= form_for [@debate,debate_side] do |f| %>
       <div class="span6 text-box">
         <%= f.text_area :argument, {placeholder:"Enter your argument", rows: "6", class: "text-left"} %>
       </div>
