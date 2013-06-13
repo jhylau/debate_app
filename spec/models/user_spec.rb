@@ -19,4 +19,14 @@ describe User do
     expect(User.all.count).to eq(previous_count-1)
   end
 
+  it 'has an role attribute' do
+    should ensure_inclusion_of(:role).in_array(%w(user admin))
+  end
+
+  describe "#is_admin?" do
+    it "checks the role for admin privileges" do
+      admin = FactoryGirl.create(:admin)
+      admin.admin?.should be_true
+    end
+  end
 end

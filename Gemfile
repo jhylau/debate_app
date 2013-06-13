@@ -4,17 +4,14 @@ gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'launchy'
+
 gem 'pg'
-gem 'pry'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem "simple_form", "~> 2.1.0"
-gem 'shoulda'
-gem 'guard-rspec'
 gem 'carrierwave'
 gem 'devise'
 gem 'jquery-rails'
-
+gem 'cancan'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -30,6 +27,12 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'rack-mini-profiler'
+  gem 'shoulda'
+  gem 'guard-rspec'
+  gem 'pry-rails'
+  gem 'launchy'
+  gem 'bullet'
 end
 
 

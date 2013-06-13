@@ -28,16 +28,23 @@ FactoryGirl.define do
     conclusion    "conclusion"
     vote_count  10
     side 'abc'
+    user
     debate
  end
 
-   factory :user do
-    username "MyString"
-    password "MyString"
-    email "MyString"
+
+  factory :user do
+    sequence(:username) {|n| "username#{n}" }
+    sequence(:password) {|n| "password#{n}" }
+    sequence(:email) {|n| "person#{n}@example.com" }
     ranking 1
     debates_participated_in 1
     tournaments_won 1
+    role "user"
+
+    factory :admin do
+      role "admin"
+    end
   end
 
   factory :vote do

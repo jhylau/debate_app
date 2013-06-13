@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130611215730) do
+ActiveRecord::Schema.define(:version => 20130613183707) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(:version => 20130611215730) do
     t.integer  "ranking"
     t.integer  "debates_participated_in"
     t.integer  "tournaments_won"
-    t.datetime "created_at",                              :null => false
-    t.datetime "updated_at",                              :null => false
-    t.string   "email",                   :default => "", :null => false
-    t.string   "encrypted_password",      :default => "", :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+    t.string   "email",                   :default => "",     :null => false
+    t.string   "encrypted_password",      :default => "",     :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20130611215730) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "role",                    :default => "user"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
