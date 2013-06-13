@@ -1,0 +1,19 @@
+<div class="row span6 offset4 form-style">
+
+<h2>Sign in</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div class="control-groups">
+    <%= f.input :email, :required => false, :autofocus => true %>
+    <%= f.input :password, :required => false %>
+    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="controls">
+     <%= f.submit "Sign In", class: "btn-small btn btn-danger" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>

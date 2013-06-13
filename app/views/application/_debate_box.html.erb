@@ -1,12 +1,10 @@
-  <% @debates.each do |d| %>
-    <li class="span4">
-      <div class="thumbnail">
-        <%= image_tag("dream_rally_1.jpg", :alt => "test", :class => "img-rounded") %>
-        <h4 class="text-center"><%= d.topic.title %></h4>
-        <p class="text-center">Barack Obama vs. Mitt Romney
-          <br>
-           <%= link_to("read more", debate_path(d), class: "btn btn-danger btn-small") %>
-        </p>
-      </div>
-    </li>
-<% end %>
+<li class="span4">
+  <div class="thumbnail">
+    <%= image_tag("dream_rally_1.jpg", :alt => "test", :class => "img-rounded") %>
+    <h4 class="text-center"><%= debate.topic.title %></h4>
+    <p class="text-center"><%= debate.debate_sides.first.user.username + " vs. " + debate.debate_sides.last.user.username %>
+      <br>
+       <%= link_to("read more", debate_path(debate), class: "btn btn-danger btn-small read-#{debate.id}") %>
+    </p>
+  </div>
+</li>

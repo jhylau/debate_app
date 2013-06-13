@@ -13,5 +13,5 @@ class User < ActiveRecord::Base
   has_many :debatesides
   has_many :debates
 
-  validates_presence_of :username, :password, :email
+  validates_presence_of :password, :email, :username
 end

@@ -3,13 +3,15 @@
       <h1 class="text-center">DebateMe</h1>
       <h2 class="text-center">The world's most important political debates</h2>
       <p class="text-center">
-        <%= link_to("JOIN US", {:controller => :signup, :action => :index, :name => "JOIN US"}, {class: "btn btn-danger btn-large"}) %>
+        <%= link_to("JOIN US", signup_index_path, {class: "btn btn-danger btn-large"}) %>
       </p>
     </div>
   </div>
   <div class = "row">
     <ul class="thumbnails row-pad-left">
-       <%= render 'debate_box' %>
+      <% @debates.each do |d| %>
+        <%= render partial: 'debate_box', locals: {debate: d} %>
+      <% end %>
     </ul>
   </div>
 </div>

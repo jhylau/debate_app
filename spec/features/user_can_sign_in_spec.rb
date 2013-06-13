@@ -7,4 +7,7 @@ describe "visiting the home page" do
         page.should redirect_to(sign_in_path)
       end
   end
+
+  context 'user forgot password' do
+  end
 end

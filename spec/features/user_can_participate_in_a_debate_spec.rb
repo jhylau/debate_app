@@ -1,7 +1,15 @@
 require 'spec_helper'
 
 describe "User debates" do
+  include Devise::TestHelpers
+
+  before (:each) do
+    @user = Factory.create(:user)
+    sign_in @user
+  end
+
   let(:debate) {FactoryGirl.create(:debate)}
+
   before(:each) do
     debate_side_yes = FactoryGirl.create(:debate_side, debate: debate, side: 'yes')
     debate_side_no = FactoryGirl.create(:debate_side, debate: debate, side: 'no')
@@ -18,9 +26,14 @@ describe "User debates" do
   it 'can find debates to participate in' do
     visit "/"
     click_on "Participate"
-    save_and_open_page
     click_on "read more"
     expect(page).to have "vs."
   end
   
+  it 'can only join one side of a debate' do
+    visit "/"
+    click_on 'read-1'
+    click_on 'join_yes'
+    page.should_not have_content 'You can only join one side!'
+  end
 end

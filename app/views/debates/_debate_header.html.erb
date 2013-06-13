@@ -1,28 +1,16 @@
 <div class="hero-unit">
   <div class="row text-center">
-    <div class="span4">
-    <h3 class="span3">Player 1</h3>
-      <%= form_for [@debate_side_yes,@votes_yes] do |f| %>
-        <p class=" span3">
-          <%= f.submit 'Vote', {class:"btn btn-primary text-center", name:"vote_yes"} %>
-            <br>
-            <strong><%= @debate_side_yes.votes.count %></strong>
-        </p>
-      <% end %>
-    </div>
-    <div class="span3 text-left">
-      <h3>Gun control is good.</h3>
-      <h4 class="text-center">We need gun laws passed this year</h4>
-    </div>
     <div class="span3">
-      <h3 class="span3">Player 2</h3>
-      <%= form_for [@debate_side_no,@votes_no] do |f| %>
-        <p class=" span3">
-          <%= f.submit 'Vote', class:"btn btn-primary text-center vote-no" %>
-            <br>
-            <strong><%= @debate_side_no.votes.count %></strong>
-        </p>
-      <% end %>
+      <%= render partial: '_debater_information', locals: {debate_side: @debate_side_yes} %>
+    </div>
+    
+    <div class="span3 offset1">
+      <h3>Gun control</h3>
+      <h4>We need gun laws passed this year</h4>
+    </div>
+
+    <div class="span3">
+        <%= render partial: '_debater_information', locals: {debate_side: @debate_side_no}  %>
      </div>
   </div>
 </div>

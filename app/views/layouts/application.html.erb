@@ -4,6 +4,7 @@
     <title>DebateMe</title>
     <%= stylesheet_link_tag  "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,200italic,400italic,600italic">
@@ -23,17 +24,26 @@
               <li><%= link_to "Admin", new_category_path(@category) %></li>
             </ul>
             <ul class="nav pull-right">
-              <li><a href="">SignOut</a></i></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                <ul class="nav pull-right">
+                  <li><a href="#"><%= current_user.email %></strong></a></li>
+                </ul>
+              <% else %>
+                <li><%= link_to "sign in", new_user_session_path %></li>
+              <% end %>
             </ul>
-            <ul class="nav pull-right">
-              <li><a href="#"><img src="http://placekitten.com/20/20">&nbsp;<strong>Username</strong></a></li>
-            </ul>
+            
           </div>
       </header>
 
       <div class="container footer-fix">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <% if notice.nil? == false %> 
+          <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if alert.nil? == false %> 
+          <p class="alert"><%= alert %></p>
+        <% end %>
       <%= yield %>
       </div>
       

@@ -1,0 +1,17 @@
+<%  user = debate_side.user  %>
+<%  if user == nil %>
+    <%= form_for [@debate,debate_side] do |f| %>
+      <p>
+        <h3 class="span3"><%= f.submit 'Join', {class:"btn btn-large btn-danger join-#{debate_side.side}"} %></h3>
+      </p>
+    <% end %>
+  <% else %>
+    <h3 class="span3"><%= user.email.split('@')[0] %></h3>
+    <%= form_for [@debate_side_yes,@vote_yes] do |f| %>
+      <p class=" span3">
+        <%= f.submit 'Vote', {class:"btn btn-primary vote-#{debate_side.side}"} %>
+          <br>
+          <strong class="votes"><%= debate_side.votes.count %></strong>
+      </p>
+    <% end %>
+  <% end %>

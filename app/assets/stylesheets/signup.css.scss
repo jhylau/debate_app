@@ -1,7 +1,10 @@
 //Form
 
-.form-style {
-  background-color: solid #D3D3D3;
+.container .form-style {
+  background-color: #D3D3D3;
+  border: solid 10px lightgrey;
+  border-radius: 5px;
+  width: 250px;
   margin-top: 5%;
   .control-label {
     font-size: 150%;

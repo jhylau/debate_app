@@ -1,0 +1,22 @@
+<div class="row span6 offset4 form-style">
+
+  <h2>Sign up</h2>
+
+  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="control-groups">
+      <%= f.input :username, :required => true, :autofocus => true %>
+      <%= f.input :email, :required => true, :autofocus => true %>
+      <%= f.input :password, :required => true %>
+      <%= f.input :password_confirmation, :required => true %>
+    </div>
+
+    <div class="controls">
+      <%= f.submit "Sign up", class: "btn-small btn btn-danger" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+</div>

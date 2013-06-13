@@ -1,11 +1,9 @@
 class HomesController < ApplicationController
+  skip_before_filter :authenticate_user!
+  
   def index
-    @debates = []
-    6.times do
-      @debates << Debate.where("id in (select debate_id from debate_sides)").first
-    end
+    @debates = Debate.all.sample(6)
     @debate = Debate.create
     @category = Category.new
   end
-
 end
