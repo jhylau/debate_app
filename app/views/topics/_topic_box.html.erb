@@ -2,7 +2,11 @@
   <%= form_for [t,@debate], html: {class:"span4"} do |f| %>
     <ul class="span4">
       <div class="thumbnail">
-        <%= image_tag("dream_rally_1.jpg", :alt => "test", :class => "img-rounded") %>
+        <% if t.image_url != nil %>
+          <%= image_tag t.image_url.to_s, :alt => "topic_image", :class => "img-rounded" %>
+        <% else %>
+          <%= image_tag("dream_rally_1.jpg") %>
+        <% end %>
         <h4 class="text-center"><%= t.title %></h4>
         <h5 class="text-center"><%= t.subtitle %></h5>
         <p class="text-center">

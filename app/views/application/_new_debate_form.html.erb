@@ -1,5 +1,5 @@
 <div class="thumbnail span3 offset4">
-  <%= form_for [@category,@topic] do |f| %>
+  <%= form_for [@category,@topic], :html => {:multipart => :true} do |f| %>
     <h3>Create a new topic</h3>
     <div class="control-group">
       <%= f.label :title, class: "control-label" %>
@@ -11,6 +11,12 @@
       <%= f.label :subtitle, class: "control-label" %>
       <div class="controls">
         <%= f.text_field :subtitle, placeholder:'subtitle' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :image, class: "control-label" %>
+      <div class="controls">
+        <%= f.file_field :image, id:'inputImage', placeholder:'Title' %>
       </div>
     </div>
     <div class="controls">

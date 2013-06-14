@@ -1,5 +1,4 @@
 class TopicsController < ApplicationController
-  # check_authorization
 
   def create
     @category = Category.where(id: params[:category_id]).first
