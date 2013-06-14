@@ -26,7 +26,7 @@ describe User do
   describe "#is_admin?" do
     it "checks the role for admin privileges" do
       admin = FactoryGirl.create(:admin)
-      admin.admin?.should be_true
+      admin.is_admin?.should be_true
     end
   end
 end

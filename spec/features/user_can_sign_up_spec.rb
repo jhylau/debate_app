@@ -12,20 +12,23 @@ require 'spec_helper'
   # * I must specify a valid email, login, password and password confirmation
 
 describe "User" do
+  before(:each) { FactoryGirl.create(:debate_side) }
   it "can click on a sign up button on the home page" do
-    FactoryGirl.create(:debate_side)
+ 
     visit '/'
     click_link('JOIN US')
-    expect(page).to have_button('Sign Up')
+    expect(page).to have_content('Sign up now')
   end
 
   it "can fill in information to sign up" do
-    visit '/signup'
+    visit '/'
+    click_link('JOIN US')
     fill_in 'Username', :with => 'string'
-    fill_in 'Email', :with => 'string'
-    fill_in 'Password', :with => 'string'
-    #click_on 'Sign Up'
-    #expect content success
+    fill_in 'Email', :with => 'string@string.com'
+    fill_in 'user_password', :with => 'avalidstring'
+    fill_in 'user_password_confirmation', :with => 'avalidstring'
+    click_on 'Sign up'
+    expect(page).to have_content("success")
   end
 
 end

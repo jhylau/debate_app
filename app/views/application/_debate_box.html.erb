@@ -4,7 +4,7 @@
     <h4 class="text-center"><%= debate.topic.title %></h4>
     <p class="text-center"><%= debate.debate_sides.first.user.username + " vs. " + debate.debate_sides.last.user.username %>
       <br>
-       <%= link_to("read more", debate_path(debate), class: "btn btn-danger btn-small read-#{debate.id}") %>
+       <%= link_to("read more", debate_path(debate), class: "btn btn-danger btn-small", id: "read-#{debate.id}") %>
     </p>
   </div>
 </li>
