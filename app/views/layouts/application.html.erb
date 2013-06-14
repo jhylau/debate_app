@@ -2,6 +2,15 @@
 <html>
   <head>
     <title>DebateMe</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        $("#alert").click(function() {
+          alert(this.getAttribute("data-message"));
+          return false;
+        })
+      })
+    </script>
     <%= stylesheet_link_tag  "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag :defaults %>
@@ -12,7 +21,8 @@
   <div class="body-div">
     <body class="body-background">
       <header class="navbar">
-          <div class="container">     
+          <div class="container">  
+            <a href="#" id="alert" data-message="Hello!">click</a>   
             <a class="brand" href="/"><strong>DebateMe</strong></a>
             <form class="navbar-form pull-left" id="navbar-style">        
               <input type="text" placeholder="Search for a debate topic.">

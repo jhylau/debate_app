@@ -7,11 +7,11 @@
     <% end %>
   <% else %>
     <h3 class="span3"><%= user.email.split('@')[0] %></h3>
-    <%= form_for [@debate_side_yes,@vote_yes] do |f| %>
+    <%= form_for [@debate_side_yes,@vote_yes], :remote => true, :html => { :id => 'vote_form' } do |f| %>
       <p class=" span3">
-        <%= f.submit 'Vote', {class:"btn btn-primary vote-#{debate_side.side}"} %>
+        <%= f.submit 'Vote', {class:"btn btn-primary", id:"vote"} %>
           <br>
-          <strong class="votes"><%= debate_side.votes.count %></strong>
+          <strong class="votes" id="votes"><%= debate_side.votes.count %></strong>
       </p>
     <% end %>
   <% end %>
