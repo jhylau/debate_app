@@ -5,4 +5,10 @@ class Debate < ActiveRecord::Base
   belongs_to :winner, class_name: 'User'
 
   validates_presence_of :topic_id
+
+  has_many :users, through: debate_side
+
+  def only_one_user
+    Debate.where
+  end
 end
