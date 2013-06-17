@@ -1,5 +1,5 @@
 <div class="span6 debate-side-form">
-  <%= form_for [@debate,debate_side] do |f| %>
+  <%= form_for [@debate_page.debate,debate_side] do |f| %>
       <div class="span6 text-box">
         <%= f.text_area :argument, {placeholder:"Enter your argument", rows: "6", class: "text-left", id:"#{debate_side.side}-argument"} %>
       </div>

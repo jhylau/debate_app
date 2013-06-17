@@ -1,6 +1,12 @@
-<%= render 'debate_header' %>
+<div class="hero-unit">
+  <div class="row text-center">
+    <%= render partial: '_debater_information', locals: {debate_side: @debate_page.yes_side} %>
+    <%= render 'debate_header' %>
+    <%= render partial: '_debater_information', locals: {debate_side: @debate_page.no_side}  %>
+  </div>
+</div>
 
 <div class="row">
-    <%= render partial: 'update_debate_form', locals: {debate_side: @debate_side_yes} %>
-    <%= render partial: 'update_debate_form', locals: {debate_side: @debate_side_no} %>
+    <%= render partial: 'update_debate_form', locals: {debate_side: @debate_page.yes_side} %>
+    <%= render partial: 'update_debate_form', locals: {debate_side: @debate_page.no_side} %>
 </div>

@@ -1,7 +1,7 @@
 <div class = "row">
   <ul class="thumbnails row-pad-left">
     <% @debates.each do |d| %>
-      <%= render partial: 'debate_box', locals: {debate: d} %>
+      <%= render partial: 'debate_box', locals: {debate: @debage_page.debate} %>
     <% end %>
   </ul>
 </div>

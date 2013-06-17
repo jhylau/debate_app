@@ -1,17 +1,18 @@
-<%  user = debate_side.user  %>
-<%  if user == nil %>
-    <%= form_for [@debate,debate_side] do |f| %>
-      <p>
-        <h3 class="span3"><%= f.submit 'Join', {class:"btn btn-large btn-danger join-#{debate_side.side}"} %></h3>
-      </p>
+<div class="span3">
+  <%  if debate_side.debater == nil %>
+      <%= form_for [@debate,debate_side.side] do |f| %>
+        <p>
+          <h3 class="span3"><%= f.submit 'Join', {class:"btn btn-large btn-danger join-#{debate_side.side}"} %></h3>
+        </p>
+      <% end %>
+    <% else %>
+      <h3 class="span3"><%= debate_side.debater_name %></h3>
+      <%= form_for [debate_side,debate_side.new_vote], :remote => true, :html => { :id => 'vote-form' } do |f| %>
+        <p class=" span3">
+          <%= f.submit 'Vote', {class:"btn btn-primary", id:"vote-#{debate_side.side}"} %>
+            <br>
+            <strong class="votes" id="votes-#{debate_side.side}"><%= debate_side.vote_count %></strong>
+        </p>
+      <% end %>
     <% end %>
-  <% else %>
-    <h3 class="span3"><%= user.username %></h3>
-    <%= form_for [debate_side,debate_side.votes.new], :remote => true, :html => { :id => 'vote_form' } do |f| %>
-      <p class=" span3">
-        <%= f.submit 'Vote', {class:"btn btn-primary", id:"vote-#{debate_side.side}"} %>
-          <br>
-          <strong class="votes" id="votes-#{debate_side.side}"><%= debate_side.votes.count %></strong>
-      </p>
-    <% end %>
-  <% end %>
+</div>
