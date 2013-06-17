@@ -5,6 +5,7 @@ class VotesController < ApplicationController
     
     respond_to do |format|
       format.html {redirect_to debate_path(@debate_side.debate)}
+
       format.js
     end
   end

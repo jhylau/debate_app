@@ -11,7 +11,7 @@
         <p class=" span3">
           <%= f.submit 'Vote', {class:"btn btn-primary", id:"vote-#{debate_side.side}"} %>
             <br>
-            <strong class="votes" id="votes-#{debate_side.side}"><%= debate_side.vote_count %></strong>
+            <strong class="votes" <%= "id=votes-#{debate_side.side}" %>><%= debate_side.vote_count %></strong>
         </p>
       <% end %>
     <% end %>

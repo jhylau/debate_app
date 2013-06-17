@@ -3,9 +3,6 @@ DebateApp::Application.routes.draw do
 
   root :to => 'homes#index'
 
-  resources :signup
-  resources :participate
-
   resources :debates, except: [:create] do
     resources :debate_sides, only: [:update]
   end

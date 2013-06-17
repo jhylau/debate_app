@@ -10,7 +10,7 @@ class DebateSideDecorator < Draper::Decorator
   end
 
   def new_vote
-    @new_vote ||= model.votes.create
+    @new_vote ||= model.votes.new
   end
 
   def vote_count
