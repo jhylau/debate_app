@@ -4,12 +4,17 @@ include Capybara::DSL
 describe "Static pages" do
   
   describe "Home page" do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:debate) {FactoryGirl.create(:debate)}
+
     before(:each) do
-      FactoryGirl.create(:debate_side)
-      visit '/'
+      debate_side_yes = FactoryGirl.create(:debate_side, debate: debate, side: 'yes')
+      debate_side_no = FactoryGirl.create(:debate_side, debate: debate, side: 'no')
     end
+
     it "should have the h1 'DebateMe' " do
-      page.should have_selector('h1', :text => 'DebateMe')
+      visit "/"
+      response.body.should have_css("h1", text: 'DebateMe')
     end
 
   end

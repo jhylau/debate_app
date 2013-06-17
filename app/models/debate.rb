@@ -6,7 +6,7 @@ class Debate < ActiveRecord::Base
 
   validates_presence_of :topic_id
 
-  has_many :users, through: debate_side
+  has_many :users, :through => :debate_sides
 
   def only_one_user
     Debate.where

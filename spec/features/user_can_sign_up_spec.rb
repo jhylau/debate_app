@@ -12,7 +12,14 @@ require 'spec_helper'
   # * I must specify a valid email, login, password and password confirmation
 
 describe "User" do
-  before(:each) { FactoryGirl.create(:debate_side) }
+
+  let(:debate) {FactoryGirl.create(:debate)}
+
+  before(:each) do
+    debate_side_yes = FactoryGirl.create(:debate_side, debate: debate, side: 'yes')
+    debate_side_no = FactoryGirl.create(:debate_side, debate: debate, side: 'no')
+  end
+  
   it "can click on a sign up button on the home page" do
  
     visit '/'

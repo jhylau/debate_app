@@ -38,13 +38,18 @@ describe 'adding a new debate' do
     context 'when a non-admin' do
     
       let(:user) { FactoryGirl.create(:user) }
+      let(:debate) {FactoryGirl.create(:debate)}
+
+      before(:each) do
+        debate_side_yes = FactoryGirl.create(:debate_side, debate: debate, side: 'yes')
+        debate_side_no = FactoryGirl.create(:debate_side, debate: debate, side: 'no')
+      end
 
       it 'does not show a link for creating a task on the index page' do
         visit new_user_session_path
           
         fill_in "Email", with: user.email
         fill_in 'Password', with: user.password
-
         click_button 'Sign In'
 
         page.should_not have_link("Admin")  
@@ -57,10 +62,8 @@ describe 'adding a new debate' do
         fill_in 'Password', with: user.password
 
         click_button 'Sign In'
-
-        FactoryGirl.create(:debate_side)
+        
         visit '/categories/new'
-        save_and_open_page
         page.should have_content("not authorized")
       end
 

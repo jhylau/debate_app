@@ -19,35 +19,31 @@ describe "User views debate" do
     debate_side_no = FactoryGirl.create(:debate_side, debate: debate, side: 'no')
   end
 
+  before do
+    login
+  end
+
   it "can click on a read more button for a specific" do
     visit '/'
-    first('.btn-small').click
+    click_on "read-#{debate.id}"
     expect(page).to have_content('argument')
   end
 
-  it 'can submit a comment' do
-    visit '/'
-    first('.btn-small').click
-    fill_in 'comment', with: "Hello World!"
-    click_on('Submit Comment')
-    expect(page).to have_content("Hello World!")
-  end 
-
   it 'can vote on yes side of a debate' do
     visit "/"
-    first('.btn-small').click
+    click_on "read-#{debate.id}"
     debate_side_yes = debate.debate_sides.where(side:"yes").first
     count = debate_side_yes.votes.count
-    first('.btn-primary').click
+    click_on "vote-yes"
     expect(page).to have_content("#{count + 1}")
   end
 
    it 'can vote on no side of a debate' do
     visit "/"
-    first('.btn-small').click
+    click_on "read-#{debate.id}"
     debate_side_yes = debate.debate_sides.where(side:"yes").first
     count = debate_side_yes.votes.count
-    page.all('.btn-primary')[1].click
+    click_on "vote-no"
     expect(page).to have_content("#{count + 1}")
   end
 end

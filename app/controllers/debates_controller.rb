@@ -1,6 +1,7 @@
 class DebatesController < ApplicationController
   def show
     @debate = Debate.find(params[:id])
+    @debate_page = DebatePage.new(@debate)
     @debate_side_yes = @debate.debate_sides.where(side:'yes').last
     @debate_side_no = @debate.debate_sides.where(side:'no').last
     @user_yes = @debate_side_yes.user
