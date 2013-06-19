@@ -6,6 +6,7 @@ class DebateSide < ActiveRecord::Base
   belongs_to :debate
 
   validates_presence_of :debate_id, :side
+  validates_uniqueness_of :user_id, :scope => :debate_id
 
   private 
   def has_user?

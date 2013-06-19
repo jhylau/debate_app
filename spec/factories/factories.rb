@@ -19,7 +19,9 @@ FactoryGirl.define do
 
   factory :debate do
     topic
-    association :winner, factory: :user
+    factory :debate_with_winner do
+      association :winner, factory: :user
+    end
   end
 
   factory :debate_side do
@@ -27,9 +29,11 @@ FactoryGirl.define do
     rebuttal    "rebuttal"
     conclusion    "conclusion"
     vote_count  10
-    side 'abc'
-    user
+    side 'default'
     debate
+    factory :debate_side_with_user do
+      user
+    end
  end
 
 

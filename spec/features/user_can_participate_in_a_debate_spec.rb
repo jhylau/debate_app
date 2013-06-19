@@ -1,18 +1,19 @@
 require 'spec_helper'
 
 describe "User participating in a debate" do
-  let(:debate) {FactoryGirl.create(:debate)}
+ let(:debate) {FactoryGirl.create(:debate)}
+ before(:each) do
+   create_debate_sides_with_users(debate)
+ end
 
-  before(:each) do
-    debate_side_yes = FactoryGirl.create(:debate_side, debate: debate, side: 'yes')
-    debate_side_no = FactoryGirl.create(:debate_side, debate: debate, side: 'no')
+ let(:user) {FactoryGirl.create(:user)}
+ 
+ before(:each) do
+    login_as(user)
   end
 
-  before do
-    login
-  end
+  context 'participating in existing debate with users' do
 
-  context 'participating in an argument' do
     it "can submit an argument" do
       visit "/debates/#{debate.id}"
       fill_in 'yes-argument', with: 'some text'
@@ -24,6 +25,13 @@ describe "User participating in a debate" do
       visit "/debates/#{debate.id}"
       fill_in 'yes-argument', with: 'some text'
       click_on 'submit-yes-argument'
+      expect(page).to have_content('some text')
+    end
+
+    it "can submit a rebuttal" do
+      visit "/debates/#{debate.id}"
+      fill_in 'yes-rebuttal', with: 'some text'
+      click_on 'submit-yes-rebuttal'
       expect(page).to have_content('some text')
     end
 
@@ -35,16 +43,22 @@ describe "User participating in a debate" do
     end
   end
 
-  
-  context 'new debate' do
+  context 'participating in a new debate without users' do 
     it 'can find debates to participate in' do
       visit "/"
       click_on "Participate"
       click_on "read-#{debate.id}"
-      # expect(page).to have_content("join")
+      click_on "join-yes"
+      expect(page).to have_content('username1')
     end
 
-    it 'can join a debate'
-     it 'can only join one side of a debate'
+    it 'can only join one side of a debate' do
+      visit "/"
+      click_on "Participate"
+      click_on "read-#{debate.id}"
+      click_on "join-yes"
+      expect(page).to have_content "Waiting for contestant"
+    end
   end
+
 end

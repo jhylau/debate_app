@@ -8,9 +8,10 @@
 
 
 Category.create(:title => 'Politics')
-Topic.create(:title => 'Immigration Reform',:subtitle => 'Immigration reform is needed',:category_id => 1)
-user1 = User.create! :username => 'Obama', :email => 'obama@gmail.com', :password => 'topsecret'
+Topic.create(:title => 'Immigration',:subtitle => 'Immigration reform is needed',:category_id => 1)
+user1 = User.create! :username => 'Obama', :email => 'obama@gmail.com', :password => 'topsecret', role: 'admin'
 user2 = User.create! :username => 'Romney', :email => 'romney@gmail.com', :password => 'topsecret'
+
 3.times do
   debate = Debate.create(:topic_id => 1)
   DebateSide.create(:debate_id => debate.id, side: 'yes', user_id: user1.id)

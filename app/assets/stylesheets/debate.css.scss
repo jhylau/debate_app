@@ -1,8 +1,25 @@
+//Debate Header
+
 .debate-header {
   border:solid #D3D3D3;
   background-color: #D3D3D3;
 }
 
+.votes {
+  color: red;
+}
+
+.temporary-header {
+  color: red;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.debate-title {
+  padding-left: 20px;
+}
+
+// Debate-forms
 .text-box {
   textarea {
     width: 440px;
@@ -30,6 +47,4 @@
   margin-bottom:15px;
 }
 
-.votes {
-  color: red;
-}
+

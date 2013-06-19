@@ -7,4 +7,7 @@ class Topic < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   validates_presence_of :category_id, :subtitle, :title
+  validates_format_of :title, :with => /^[^ ]+$/
+  validates :subtitle, :length => { :maximum => 80 }
+  validates :title, :length => {:maximum => 20}
 end

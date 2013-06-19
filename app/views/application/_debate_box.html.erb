@@ -6,7 +6,7 @@
     <% user_no = username(debate.debate_sides.where(side:'no')) %>
     <p class="text-center"><%= user_yes + " vs. " + user_no %>
       <br>
-       <%= link_to("view", debate_path(debate), class: "btn btn-danger btn-small", id: "read-#{debate.id}") %>
+       <%= link_to("read", debate_path(debate), class: "btn btn-danger btn-small", id: "read-#{debate.id}") %>
     </p>
   </div>
 </li>

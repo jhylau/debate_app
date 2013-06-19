@@ -1,68 +1,53 @@
 require 'spec_helper'
 
 describe 'adding a new debate' do
+  let(:debate) {FactoryGirl.create(:debate)}
+  before(:each) do
+    create_debate_sides_with_users(debate)
+  end
 
   context 'when an admin' do
-    let(:admin) { FactoryGirl.create(:admin) }
+    let(:admin) { FactoryGirl.create(:admin) }  
 
+    before(:each) do
+      login_as(admin)
+    end
 
-    it 'shows a link for admin panel on indes page' do
-      visit new_user_session_path
-      
-      fill_in "Email", with: admin.email
-      fill_in 'Password', with: admin.password
-
-      click_button 'Sign In'
-
+    it 'shows a link for admin panel on index page when signed in as admin' do
       page.should have_link("Admin")
     end
 
     it "can submit a new debate topic and subtopic" do
-      visit new_user_session_path
-      
-      fill_in "Email", with: admin.email
-      fill_in 'Password', with: admin.password
-
-      click_button 'Sign In'
-
-      FactoryGirl.create(:debate)
       click_on ("Admin")
-      fill_in 'Title', :with => 'A stupid topic'
-      fill_in 'subtitle', :with => 'A stupid subtopic'
-      click_link('Create')
-      expect(page).to have_content('DebateMe')
+      fill_in 'Title', with: 'Topic'
+      fill_in 'subtitle', with: 'subtopic'
+      click_button 'Create'
+      expect(page).to have_content('successfully created')
+    end
+
+    it 'can only submit titles with no spaces' do
+      click_on ("Admin")
+      fill_in 'Title', with: 'Topic Topic'
+      fill_in 'subtitle', with: 'subtitle'
+      click_button 'Create'
+      expect(page).to have_content('not created')
     end
 
   end
     
     context 'when a non-admin' do
-    
-      let(:user) { FactoryGirl.create(:user) }
-      let(:debate) {FactoryGirl.create(:debate)}
+      let(:user) { FactoryGirl.create(:user) }  
 
       before(:each) do
-        debate_side_yes = FactoryGirl.create(:debate_side, debate: debate, side: 'yes')
-        debate_side_no = FactoryGirl.create(:debate_side, debate: debate, side: 'no')
+        login_as(user)
       end
 
       it 'does not show a link for creating a task on the index page' do
-        visit new_user_session_path
-          
-        fill_in "Email", with: user.email
-        fill_in 'Password', with: user.password
-        click_button 'Sign In'
-
+        visit root_path
         page.should_not have_link("Admin")  
       end
 
       it 'redirects back to index when attempting to access new topic form' do
-        visit new_user_session_path
-
-        fill_in "Email", with: user.email
-        fill_in 'Password', with: user.password
-
-        click_button 'Sign In'
-        
         visit '/categories/new'
         page.should have_content("not authorized")
       end

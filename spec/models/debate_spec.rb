@@ -20,4 +20,6 @@ describe Debate do
     expect(Debate.count).to eq(previous_count-1)
   end
 
+  it 'does not allow the same user to have '
+
 end

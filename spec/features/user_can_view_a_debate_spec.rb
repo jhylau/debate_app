@@ -1,26 +1,14 @@
 require 'spec_helper'
 
-
-  # User Story
-  # As a prospective user
-  # I want to view a debate
-  # so I can learn more about political issues.
-
-
-  #Acceptance Criteria:
-  # * When I visit the home page, I can click read more on topics that I like.
-  # * I can comment on the debate posts
-
-
 describe "User views debate" do
   let(:debate) {FactoryGirl.create(:debate)}
+  let(:user) {FactoryGirl.create(:user)}
   before(:each) do
-    debate_side_yes = FactoryGirl.create(:debate_side, debate: debate, side: 'yes')
-    debate_side_no = FactoryGirl.create(:debate_side, debate: debate, side: 'no')
+      create_debate_sides_with_users(debate)
   end
 
   before do
-    login
+    login_as(user)
   end
 
   it "can click on a read more button for a specific" do

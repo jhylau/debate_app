@@ -7,6 +7,8 @@ describe Topic do
   it {should validate_presence_of(:subtitle)}
   it {should validate_presence_of(:title)}
   it {should belong_to(:category)}
+  it {should ensure_length_of(:title).is_at_most(20) }
+  it { should ensure_length_of(:subtitle).is_at_most(80) }
 
    it "stores new topic records" do
     previous_count = Topic.count
@@ -20,4 +22,7 @@ describe Topic do
     Topic.first.destroy
     expect(Topic.all.count).to eq(previous_count-1)
   end
+
+  it 'allows photos to be uploaded' 
+
 end

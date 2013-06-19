@@ -1,8 +1,8 @@
 <div class="span3">
   <%  if debate_side.debater == nil %>
-      <%= form_for [@debate,debate_side.side] do |f| %>
+    <%= form_for [debate,debate_side] do |f| %>
         <p>
-          <h3 class="span3"><%= f.submit 'Join', {class:"btn btn-large btn-danger join-#{debate_side.side}"} %></h3>
+          <h3 class="span3"><%= f.submit 'Join', {class:"btn btn-large btn-danger", id:"join-#{debate_side.side}"} %></h3>
         </p>
       <% end %>
     <% else %>

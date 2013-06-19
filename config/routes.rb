@@ -2,7 +2,7 @@ DebateApp::Application.routes.draw do
   devise_for :users
 
   root :to => 'homes#index'
-
+  resources :participate, only: [:index]
   resources :debates, except: [:create] do
     resources :debate_sides, only: [:update]
   end

@@ -8,8 +8,7 @@ describe "Static pages" do
     let(:debate) {FactoryGirl.create(:debate)}
 
     before(:each) do
-      debate_side_yes = FactoryGirl.create(:debate_side, debate: debate, side: 'yes')
-      debate_side_no = FactoryGirl.create(:debate_side, debate: debate, side: 'no')
+      create_debate_sides_with_users(debate)
     end
 
     it "should have the h1 'DebateMe' " do

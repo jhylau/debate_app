@@ -46,6 +46,7 @@ GEM
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    chunky_png (1.2.8)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -54,6 +55,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
     devise (2.2.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -74,6 +79,7 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.0)
     formatador (0.2.4)
+    fssm (0.2.10)
     guard (1.8.0)
       formatador (>= 0.2.4)
       listen (>= 1.0.0)
@@ -146,6 +152,10 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     request_store (1.0.5)
+    responder (0.2.2)
+      compass (>= 0.12.2)
+      rake
+      sass (>= 3.2.0)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
@@ -216,6 +226,7 @@ DEPENDENCIES
   pry-rails
   rack-mini-profiler
   rails (= 3.2.13)
+  responder
   rspec-rails
   sass-rails (~> 3.2.3)
   shoulda
