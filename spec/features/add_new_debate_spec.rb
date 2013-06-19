@@ -35,11 +35,11 @@ describe 'adding a new debate' do
 
   end
     
-    context 'when a non-admin' do
-      let(:user) { FactoryGirl.create(:user) }  
+    context 'when a regular_user' do
+      let(:regular_user) { FactoryGirl.create(:user) }  
 
       before(:each) do
-        login_as(user)
+        login_as(regular_user)
       end
 
       it 'does not show a link for creating a task on the index page' do

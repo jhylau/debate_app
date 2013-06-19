@@ -5,7 +5,18 @@ describe User do
   
   it {should validate_presence_of(:password)}
   it {should validate_presence_of(:email)}
-
+  it { should allow_value("a@b.com").for(:email) }
+  it { should_not allow_value("blah").for(:email) }
+  # it { should_not allow_mass_assignment_of(:password) }
+  it { should allow_mass_assignment_of(:email) }
+  it { should allow_mass_assignment_of(:password) }
+  it { should allow_mass_assignment_of(:password_confirmation) }
+  it { should allow_mass_assignment_of(:remember_me) }
+  it { should allow_mass_assignment_of(:debates_participated_in) }
+  it { should allow_mass_assignment_of(:ranking) }
+  it { should allow_mass_assignment_of(:tournaments_won) }
+  it { should allow_mass_assignment_of(:role) }
+  
   it "stores new user records" do
     previous_count = User.count
     3.times {FactoryGirl.create(:user)}
