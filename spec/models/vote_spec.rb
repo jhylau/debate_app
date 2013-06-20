@@ -17,6 +17,14 @@ describe Vote do
     expect(Vote.all.count).to eq(3 + previous_count)
   end
 
+  it 'validates uniqueness of user in the votes for each debate' do
+    debate = FactoryGirl.create(:debate)
+    user = FactoryGirl.create(:user)
+    create_debate_sides_with_users(debate)
+    debate.debate_sides.where(side: 'yes').first.votes.create!(user_id: user.id)
+    new_vote = debate.debate_sides.where(side: 'no').first.votes.new(user_id: user.id)
+    new_vote.should have(1).errors_on(:uniqueness_error)
+  end
 
   it "removes destroyed vote records" do
     3.times {FactoryGirl.create(:vote)}

@@ -7,6 +7,7 @@ class Debate < ActiveRecord::Base
   validates_presence_of :topic_id
 
   has_many :users, :through => :debate_sides
+  has_many :votes, :through => :debate_sides
 
   def has_one_user?
     user_number = 0

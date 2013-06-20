@@ -8,6 +8,7 @@ describe Debate do
   it {should belong_to(:winner).class_name('User')}
   it {should have_many(:debate_sides)}
   it {should have_many(:users).through(:debate_sides)}
+  it {should have_many(:votes).through(:debate_sides)}
   it {should allow_mass_assignment_of(:topic_id)}
   it {should_not allow_mass_assignment_of(:winner_id)}
 
