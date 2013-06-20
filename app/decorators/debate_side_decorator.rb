@@ -16,6 +16,15 @@ class DebateSideDecorator < Draper::Decorator
   def vote_count
     @vote_count ||= model.votes.count
   end
+
+  def opposing_argument
+    @opposing_argument ||= model.debate.debate_sides.where('side != ?',model.side).first.argument
+  end
+
+  def opposing_rebuttal
+    @opposing_argument ||= model.debate.debate_sides.where('side != ?',model.side).first.rebuttal
+  end
+
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
