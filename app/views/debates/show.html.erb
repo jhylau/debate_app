@@ -16,11 +16,14 @@
 
 <div class="row">
    <% if @debate_page.yes_side.user != nil %>
-
+      <div class="yes-side">
       <%= render partial: 'update_response_form', locals: {debate_side: @debate_page.yes_side} %>
+    </div>
     <% end %>
 
     <% if @debate_page.no_side.user != nil %>
+      <div class="no-side">
       <%= render partial: 'update_response_form', locals: {debate_side: @debate_page.no_side} %>
+    </div>
     <% end %>
 </div>

@@ -36,7 +36,19 @@ FactoryGirl.define do
   factory :response do
     content 'text'
     debate_side
-    response_type 'argument'
+    response_type 'Argument'
+
+    factory :argument do
+      response_type 'Argument'
+    end
+
+    factory :rebuttal do
+      response_type 'Rebuttal'
+    end
+
+    factory :conclusion do
+      response_type 'Conclusion'
+    end
   end
 
   factory :user do

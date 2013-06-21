@@ -1,7 +1,6 @@
 class DebatesController < ApplicationController
   def show
     @debate_page = DebatePage.new(params[:id])
-    @response = Response.new
   end
 
   def index

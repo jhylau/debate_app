@@ -21,7 +21,30 @@ describe DebateSide do
     it 'should return false if the debateside has a user' do
       debate_side = FactoryGirl.create(:debate_side)
       expect(debate_side.has_user?).to be_false
-    end 
+    end
+  end
+
+  describe '#new_response' do
+    it 'returns the argument response if none exist yes' do
+      debate_side = FactoryGirl.create(:debate_side)
+      debate_side.new_response.response_type.should == 'Argument'
+    end
+
+     it 'returns the rebuttal response if argument exists' do
+      debate_side = FactoryGirl.create(:debate_side)
+      argument = FactoryGirl.create(:argument, debate_side: debate_side)
+      debate_side.new_response.response_type.should == 'Rebuttal'
+    end
+
+    it 'returns the conclusion if rebuttal exists' do
+      debate_side = FactoryGirl.create(:debate_side)
+      FactoryGirl.create(:argument, debate_side: debate_side)
+      FactoryGirl.create(:rebuttal, debate_side: debate_side)
+
+      debate_side.new_response.response_type.should == 'Conclusion'
+    end
+
+
   end
 
 end

@@ -1,14 +1,14 @@
 <div class="span6 debate-side-form">
   <%= render partial: 'responses', locals: {debate_side: debate_side} %>
-  <%= form_for [debate_side, @response] do |f| %>
+  <%- response = debate_side.new_response %>
+  <%= form_for [debate_side, response] do |f| %>
       <div class="span6 text-box">
         <h4 class="debater-name"><%= debate_side.debater.username %>'s argument:</h4>
+        <%= f.label :content, response.response_type %>
         <%= f.text_area :content, {placeholder:"waiting for response", rows: "6"} %>
       </div>
-      <% if current_user == debate_side.debater %>
         <div class="span6 submit-button">
-          <%= f.submit 'submit', class:"btn btn-danger", id: "submit-#{debate_side.side}-argument" %>
+          <%= f.submit 'Submit', class:"btn btn-danger", id: "submit-#{debate_side.side}-argument" %>
         </div>
-      <% end %>
   <% end %>
 </div>
