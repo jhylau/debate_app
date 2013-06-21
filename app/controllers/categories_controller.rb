@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def new
-    @category = Category.all.first
+    @category = Category.first
     authorize! :read, @category
     @topic = @category.topics.build
   end

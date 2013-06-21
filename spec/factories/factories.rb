@@ -25,9 +25,6 @@ FactoryGirl.define do
   end
 
   factory :debate_side do
-    argument  "argument"
-    rebuttal    "rebuttal"
-    conclusion    "conclusion"
     vote_count  10
     side 'default'
     debate
@@ -36,6 +33,11 @@ FactoryGirl.define do
     end
  end
 
+  factory :response do
+    content 'text'
+    debate_side
+    response_type 'argument'
+  end
 
   factory :user do
     sequence(:username) {|n| "username#{n}" }

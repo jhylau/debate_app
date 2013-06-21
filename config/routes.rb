@@ -7,6 +7,10 @@ DebateApp::Application.routes.draw do
     resources :debate_sides, only: [:update]
   end
 
+resources :debate_sides do
+  resources :responses
+end
+
  resources :debate_sides, except: [:update] do
   resources :votes, only: [:create]
  end

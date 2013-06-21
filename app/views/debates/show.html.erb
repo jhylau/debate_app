@@ -11,16 +11,16 @@
     <% else %>
       <%= render partial: '_debater_information', locals: {debate_side: @debate_page.no_side, debate: @debate_page.debate}  %>
     <% end %>
-
   </div>
 </div>
 
 <div class="row">
    <% if @debate_page.yes_side.user != nil %>
-      <%= render partial: 'update_debate_form', locals: {debate_side: @debate_page.yes_side, debate: @debate_page.debate} %>
+
+      <%= render partial: 'update_response_form', locals: {debate_side: @debate_page.yes_side} %>
     <% end %>
 
     <% if @debate_page.no_side.user != nil %>
-      <%= render partial: 'update_debate_form', locals: {debate_side: @debate_page.no_side, debate: @debate_page.debate} %>
+      <%= render partial: 'update_response_form', locals: {debate_side: @debate_page.no_side} %>
     <% end %>
 </div>

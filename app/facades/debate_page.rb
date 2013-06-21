@@ -13,4 +13,12 @@ class DebatePage
    @no_side ||= @debate.debate_sides.where(side:"no").first.decorate
   end
 
+  def title
+    @title ||= @debate.topic.title
+  end
+
+  def subtitle
+    @title ||= @debate.topic.subtitle
+  end
 end
+

@@ -9,10 +9,6 @@ class DebateSideDecorator < Draper::Decorator
     @debater_name ||= debater.username
   end
 
-  def new_vote
-    @new_vote ||= model.votes.new
-  end
-
   def vote_count
     @vote_count ||= model.votes.count
   end
@@ -22,16 +18,7 @@ class DebateSideDecorator < Draper::Decorator
   end
 
   def opposing_rebuttal
-    @opposing_argument ||= model.debate.debate_sides.where('side != ?',model.side).first.rebuttal
+    @opposing_rebuttal ||= model.debate.debate_sides.where('side != ?',model.side).first.rebuttal
   end
-
-  # Define presentation-specific methods here. Helpers are accessed through
-  # `helpers` (aka `h`). You can override attributes, for example:
-  #
-  #   def created_at
-  #     helpers.content_tag :span, class: 'time' do
-  #       object.created_at.strftime("%a %m/%d/%y")
-  #     end
-  #   end
 
 end

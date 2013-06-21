@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130614174217) do
+ActiveRecord::Schema.define(:version => 20130621184728) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -29,9 +29,6 @@ ActiveRecord::Schema.define(:version => 20130614174217) do
   end
 
   create_table "debate_sides", :force => true do |t|
-    t.text     "argument"
-    t.text     "rebuttal"
-    t.text     "conclusion"
     t.integer  "vote_count"
     t.string   "user_id"
     t.string   "side"
@@ -45,6 +42,14 @@ ActiveRecord::Schema.define(:version => 20130614174217) do
     t.integer  "winner_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "responses", :force => true do |t|
+    t.string   "response_type"
+    t.text     "content"
+    t.integer  "debate_side_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "topics", :force => true do |t|
