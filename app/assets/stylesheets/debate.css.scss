@@ -31,6 +31,19 @@
   }
 }
 
+.response {
+    width: 440px;
+    background-color: #D3D3D3;
+    color: black;
+    border:#B3B3B3 solid 3px;
+    font-style: bold;
+    text-align: left;
+    height: 125px
+}
+
+.response-type {
+  padding-top: 5px
+}
 .debater-name {
   margin: 0 0 0 0;
 }

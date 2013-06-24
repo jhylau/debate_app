@@ -1,6 +1,8 @@
 <% debate_side.responses.each do |r| %>
-
-  <div class="span6 text-box">
-    <h3><%= r.content %></h3>
+  <div class="span6 response-type">
+    <p><%= r.response_type + ':' %></p>
+  </div>
+  <div class="span6 text-box response">
+    <p><%= r.content %></p>
   </div>
 <% end %>

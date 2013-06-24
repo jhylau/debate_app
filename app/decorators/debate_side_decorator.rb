@@ -13,12 +13,12 @@ class DebateSideDecorator < Draper::Decorator
     @vote_count ||= model.votes.count
   end
 
-  def opposing_argument
-    @opposing_argument ||= model.debate.debate_sides.where('side != ?',model.side).first.argument
+  def response_count
+    @response_count ||= model.responses.count
   end
-
-  def opposing_rebuttal
-    @opposing_rebuttal ||= model.debate.debate_sides.where('side != ?',model.side).first.rebuttal
+  
+  def opposition_response_count
+    @opposition_response_count ||= model.debate.debate_sides.where('side != ?',model.side).first.responses.count
   end
 
 end
