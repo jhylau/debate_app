@@ -8,8 +8,7 @@ class VotesController < ApplicationController
         format.html { redirect_to debate_path(@debate_side.debate) }
         format.js
       else
-        binding.pry
-        redirect_to root_url, notice: 'failed to submit.'
+        format.js
       end
     end
   end
