@@ -19,6 +19,24 @@
   padding-left: 20px;
 }
 
+.pagination {
+  .page a {
+    color: #C3B3B3;
+  }
+  .next a {
+    color: #C3B3B3;
+  }
+  .last a {
+    color: #C3B3B3;
+  }
+  .first a {
+    color: #C3B3B3;
+  }
+  .prev a {
+    color: #C3B3B3;
+  }
+}
+
 // Debate-forms
 .text-box {
   textarea {

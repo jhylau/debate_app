@@ -1,7 +1,7 @@
 class ParticipateController < ApplicationController
   def index
     @all_debates = Debate.all
-    @debates = only_one_user(@all_debates)
+    @debates = Kaminari.paginate_array(only_one_user(@all_debates)).page params[:page]
   end
 
   private

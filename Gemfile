@@ -14,6 +14,8 @@ gem 'jquery-rails'
 gem 'cancan'
 gem 'draper'
 gem 'responder'
+gem "pg_search"
+gem "kaminari"
 
 # Gems used only for assets and not required
 # in production environments by default.

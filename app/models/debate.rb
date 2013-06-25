@@ -9,6 +9,7 @@ class Debate < ActiveRecord::Base
   has_many :users, :through => :debate_sides
   has_many :votes, :through => :debate_sides
 
+  paginates_per 6
   def has_one_user?
     user_number = 0
     if self.debate_sides.first.user != nil
