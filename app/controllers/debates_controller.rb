@@ -4,7 +4,7 @@ class DebatesController < ApplicationController
   end
 
   def index
-    @debates = Debate.sample(20)
+    @debates = Debate.text_search(params[:query])
   end
 
   def create

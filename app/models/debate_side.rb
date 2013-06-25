@@ -1,5 +1,6 @@
 class DebateSide < ActiveRecord::Base
-  attr_accessible :argument, :conclusion, :rebuttal, :side, :vote_count
+
+  attr_accessible  :side
   has_many :responses
   has_many :votes
   belongs_to :user
