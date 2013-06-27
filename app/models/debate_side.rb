@@ -1,6 +1,6 @@
 class DebateSide < ActiveRecord::Base
 
-  attr_accessible  :side
+  attr_accessible  :side, :debate_id, :user_id
   has_many :responses
   has_many :votes
   belongs_to :user

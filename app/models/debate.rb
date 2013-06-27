@@ -1,5 +1,6 @@
 class Debate < ActiveRecord::Base
   include PgSearch
+  multisearchable :against => [:winner]
 
   attr_accessible :topic_id
   has_many :debate_sides

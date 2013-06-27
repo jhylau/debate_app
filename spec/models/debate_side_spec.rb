@@ -8,7 +8,6 @@ describe DebateSide do
   it {should validate_presence_of(:side)}
   it {should validate_uniqueness_of(:user_id).scoped_to(:debate_id)}
   it {should have_many(:responses)}
-  it {should allow_mass_assignment_of(:vote_count)}
   it {should_not allow_mass_assignment_of(:debate_id)}
   it {should_not allow_mass_assignment_of(:user_id)}  
  

@@ -31,7 +31,7 @@ feature 'debater can submit a conclusion', %q{
       click_button 'Sign In'
       visit debate_path(debate)
       save_and_open_page
-      within('.yes-side') do
+      within('.no-side') do
         fill_in 'Conclusion', with: 'foo bar baz'
         click_button 'Submit'
       end
@@ -39,9 +39,9 @@ feature 'debater can submit a conclusion', %q{
       page.should have_content('abc')
       page.should have_content('foo bar baz')
       page.should have_content('successfully submitted response')
-      response = debate_side_yes.responses.where(response_type: 'conclusion').first
+      response = debate_side_no.responses.where(response_type: 'Conclusion').first
       response.content.should == 'foo bar baz'
-      response.response_type.should == 'conclusion'
+      response.response_type.should == 'Conclusion'
     end
 
     scenario 'submitting empty form displays error'

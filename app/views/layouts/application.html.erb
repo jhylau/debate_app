@@ -3,14 +3,6 @@
   <head>
     <title>DebateMe</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-      $(function() {
-        $("#alert").click(function() {
-          alert(this.getAttribute("data-message"));
-          return false;
-        })
-      })
-    </script>
     <%= stylesheet_link_tag  "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -22,9 +14,10 @@
       <header class="navbar">
           <div class="container">  
             <a class="brand" href="/"><strong>DebateMe</strong><a href="#" class="brand" id="alert" data-message="Hello!"><small>beta</small></a></a>
-            <form class="navbar-form pull-left" id="navbar-style">        
-              <input type="text" placeholder="Search for a debate topic.">
-            </form>
+            <%= form_tag debates_path, method: :get do %>
+              <%= text_field_tag :query, params[:query], :class => "search-box" %>
+              <%= submit_tag "Search This Site", name: nil, :class => "btn btn-search" %>
+            <% end %>
             <ul class="nav">
               <li><%= link_to "Create", topics_path %>
               <li><%= link_to "Participate", participate_index_path %>
