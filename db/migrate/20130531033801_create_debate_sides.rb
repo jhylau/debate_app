@@ -5,7 +5,7 @@ class CreateDebateSides < ActiveRecord::Migration
       t.text :rebuttal
       t.text :conclusion
       t.integer :vote_count
-      t.string :user_id
+      t.integer :user_id
       t.string :side
       t.integer :debate_id
 

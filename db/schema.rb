@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20130625215036) do
 
   create_table "debate_sides", :force => true do |t|
     t.integer  "vote_count"
-    t.string   "user_id"
+    t.integer  "user_id"
     t.string   "side"
     t.integer  "debate_id"
     t.datetime "created_at", :null => false

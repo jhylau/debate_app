@@ -32,7 +32,7 @@
               <% if user_signed_in? %>
                 <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
                 <ul class="nav pull-right">
-                  <li><a href="#"><%= current_user.email %></strong></a></li>
+                  <li><a href=""><%= link_to current_user.email, profile_path(current_user) %></strong></a></li>
                 </ul>
               <% else %>
                 <li><%= link_to "sign in", new_user_session_path %></li>

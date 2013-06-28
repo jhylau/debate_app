@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :votes
   has_many :comments
   has_many :debate_sides
-  has_many :debates
+  has_many :debates, through: :debate_sides
 
   validates_presence_of :password, :email, :username
   validates_inclusion_of :role, in: ["user", "admin"]
