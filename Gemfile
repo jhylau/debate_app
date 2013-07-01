@@ -7,15 +7,16 @@ gem 'rails', '3.2.13'
 gem "rake", "~> 10.1.0"
 gem 'pg'
 gem 'bootstrap-sass', '~> 2.3.1.0'
-gem "simple_form", "~> 2.1.0"
+gem 'simple_form', '~> 2.1.0'
 gem 'carrierwave'
 gem 'devise'
 gem 'jquery-rails'
 gem 'cancan'
 gem 'draper'
 gem 'responder'
-gem "pg_search"
-gem "kaminari"
+gem 'pg_search'
+gem 'kaminari'
+gem 'rails_admin'
 
 # Gems used only for assets and not required
 # in production environments by default.

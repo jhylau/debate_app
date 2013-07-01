@@ -1,4 +1,7 @@
 DebateApp::Application.routes.draw do
+
+  mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
+
   devise_for :users
 
   root :to => 'homes#index'
@@ -6,6 +9,7 @@ DebateApp::Application.routes.draw do
   resources :profiles, only: [:show]
 
   resources :participate, only: [:index]
+
   resources :debates, except: [:create] do
     resources :debate_sides, only: [:update]
   end
