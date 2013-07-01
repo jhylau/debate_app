@@ -9,21 +9,23 @@
 
 Category.create(:title => 'Politics')
 Topic.create(:title => 'Immigration',:subtitle => 'Immigration reform is needed', :category_id => 1)
-Topic.create(:title => 'Immigration',:subtitle => 'Immigration reform is needed', :category_id => 1)
-Topic.create(:title => 'Immigration',:subtitle => 'Immigration reform is needed', :category_id => 1)
+Topic.create(:title => 'Obama',:subtitle => 'Obama is a good president', :category_id => 1)
+Topic.create(:title => 'Gay Marriage',:subtitle => 'Gay marriage should be legal', :category_id => 1)
 
-user1 = User.create! :username => 'Obama', :email => 'obama@gmail.com', :password => 'topsecret', role: 'admin'
+admin = User.create! :username => 'Admin', :email => 'admin@gmail.com', :password => 'topsecret', role: 'admin'
+user1 = User.create! :username => 'Obama', :email => 'obama@gmail.com', :password => 'topsecret'
 user2 = User.create! :username => 'Romney', :email => 'romney@gmail.com', :password => 'topsecret'
+user3 = User.create! :username => 'jhylau', :email => 'jhylau1@gmail.com', :password => 'topsecret'
 
-3.times do
-  debate = Debate.create(:topic_id => 1)
+3.times do |i|
+  debate = Debate.create(:topic_id => i + 1)
   DebateSide.create(:debate_id => debate.id, side: 'yes', user_id: user1.id)
   DebateSide.create(:debate_id => debate.id, side: 'no', user_id: user2.id)
 end
 
-3.times do
-  debate = Debate.create(:topic_id => 1)
-  DebateSide.create(:debate_id => debate.id, side: 'yes', user_id: user1.id)
+3.times do |i|
+  debate = Debate.create(:topic_id => i + 1)
+  DebateSide.create(:debate_id => debate.id, side: 'yes', user_id: user3.id)
   DebateSide.create(:debate_id => debate.id, side: 'no')
 end
 
