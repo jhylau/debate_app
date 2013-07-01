@@ -21,4 +21,15 @@ class User < ActiveRecord::Base
     role == "admin"
   end
 
+  def number_of_debates
+    @number_of_debates ||= debates.count
+  end
+
+  def number_of_wins
+    @number_of_wins ||= debates.where(winner_id: self.id).count
+  end
+
+  def global_ranking
+    @global_ranking ||= ranking.to_s == nil ? ranking.to_s : 'n/a'
+  end
 end
