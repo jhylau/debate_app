@@ -13,10 +13,12 @@
     <body class="body-background">
       <header class="navbar">
           <div class="container">  
-            <a class="brand" href="/"><strong>DebateMe</strong><a href="#" class="brand" id="alert" data-message="Hello!"><small>beta</small></a></a>
-            <%= form_tag debates_path, method: :get do %>
-              <%= text_field_tag :query, params[:query], :class => "search-box" %>
-              <%= submit_tag "Search This Site", name: nil, :class => "btn btn-search" %>
+            <a class="brand" href="/"><strong>DebateMe</strong></a>
+            <%= form_tag debates_path, method: :get, :class => "navbar-form pull-left form-search", :id => "navbar-style" do %>
+              <%= text_field_tag :query, params[:query] %>
+              <%= button_tag(type: "submit", class: "btn btn-default btn-mini") do %>
+                <i class="icon-search"></i>
+              <% end %>
             <% end %>
             <ul class="nav">
               <li><%= link_to "Create", topics_path %>
@@ -31,9 +33,7 @@
             <ul class="nav pull-right">
               <% if user_signed_in? %>
                 <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-                <ul class="nav pull-right">
-                  <li><a href=""><%= link_to current_user.email, profile_path(current_user) %></strong></a></li>
-                </ul>
+                  <li><%= link_to current_user.username, profile_path(current_user) %></li>
               <% else %>
                 <li><%= link_to "sign in", new_user_session_path %></li>
               <% end %>

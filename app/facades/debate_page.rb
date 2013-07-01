@@ -18,7 +18,7 @@ class DebatePage
   end
 
   def subtitle
-    @title ||= @debate.topic.subtitle
+    @subtitle ||= @debate.topic.subtitle
   end
 end
 

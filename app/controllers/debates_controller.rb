@@ -4,7 +4,7 @@ class DebatesController < ApplicationController
   end
 
   def index
-    @debates = PgSearch.multisearch(params[:query])
+    @debates = Debate.debate_search(params[:query])
   end
 
   def create

@@ -1,9 +1,16 @@
 class Debate < ActiveRecord::Base
   include PgSearch
-  multisearchable :against => [:winner]
+  pg_search_scope :debate_search, :associated_against => {
+    :topic => [:title, :subtitle],
+    :category => [:title, :subtitle],
+    :responses => [:content]
+  }
 
   attr_accessible :topic_id
   has_many :debate_sides
+  has_many :responses, through: :debate_sides
+  has_many :users, through: :debate_sides
+  has_one :category, through: :topic
   belongs_to :topic
   belongs_to :winner, class_name: 'User'
 

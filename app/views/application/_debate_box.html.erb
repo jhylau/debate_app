@@ -1,7 +1,7 @@
 <li class="span4">
   <div class="thumbnail">
     <%= image_tag("dream_rally_1.jpg", :alt => "test", :class => "img-rounded") %>
-    <h4 class="text-center"><%= debate.topic.title %></h4>
+    <h4 class="text-center"><%= debate.topic.subtitle %></h4>
     <% user_yes = username(debate.debate_sides.where(side:'yes')) %>
     <% user_no = username(debate.debate_sides.where(side:'no')) %>
     <p class="text-center"><%= user_yes + " vs. " + user_no %>
