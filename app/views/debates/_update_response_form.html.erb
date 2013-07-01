@@ -3,13 +3,15 @@
   <%- if debate_side.new_response  && current_user == debate_side.debater && debate_side.response_count <= debate_side.opposition_response_count %>
     <%- response = debate_side.new_response %>
     <%= form_for [debate_side, response] do |f| %>
+        <div class="span6 response-type">
+          <p><%= response.response_type + ':' %></p>
+        </div>
         <div class="span6 text-box">
-          <%= f.label :content, response.response_type %>
           <%= f.text_area :content, {placeholder:"waiting for response", rows: "6"} %>
         </div>
-          <div class="span6 submit-button">
-            <%= f.submit 'Submit', class:"btn btn-danger", id: "submit-#{debate_side.side}-argument" %>
-          </div>
+        <div class="span6 submit-button">
+          <%= f.submit 'Submit', class:"btn btn-danger", id: "submit-#{debate_side.side}-argument" %>
+        </div>
       <% end %>
     <% end %>
 </div>
