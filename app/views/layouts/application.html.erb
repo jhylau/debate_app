@@ -21,9 +21,9 @@
               <% end %>
             <% end %>
             <ul class="nav">
-              <li><%= link_to "Create", topics_path %>
-              <li><%= link_to "Participate", participate_index_path %>
-              <li><a href="#">About</a></li>
+              <li><%= link_to "Create", topics_path %></li>
+              <li><%= link_to "Participate", participate_index_path %></li>
+              <li><%= link_to "About", about_index_path %></li>
               <% if current_user != nil %>
                 <% if current_user.is_admin? %>
                   <li><%= link_to "New Topic", new_category_path(@category) %></li>
