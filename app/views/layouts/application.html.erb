@@ -22,7 +22,7 @@
             <% end %>
             <ul class="nav">
               <li><%= link_to "Create", topics_path %></li>
-              <li><%= link_to "Participate", participate_index_path %></li>
+              <li><%= link_to "Challenge", participate_index_path %></li>
               <li><%= link_to "About", about_index_path %></li>
               <% if current_user != nil %>
                 <% if current_user.is_admin? %>
@@ -33,7 +33,7 @@
             <ul class="nav pull-right">
               <% if user_signed_in? %>
                 <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-                  <li><%= link_to current_user.username, profile_path(current_user) %></li>
+                  <li><%= link_to "#{current_user.username}'s Profile", profile_path(current_user) %></li>
               <% else %>
                 <li><%= link_to "sign in", new_user_session_path %></li>
               <% end %>
