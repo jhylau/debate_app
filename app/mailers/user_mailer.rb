@@ -1,9 +1,8 @@
 class UserMailer < ActionMailer::Base
-  default :from => "jhylau1@gmail.com"
-  
-  def registration_confirmation(user)
+  default from: "admin@debateme.com"
+
+   def join_debate_email(user)
     @user = user
-    attachments["rails.png"] = File.read("#{Rails.root}/public/images/rails.png")
-    mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")
+    mail(to: @user.email, subject: 'You have joined a debate')
   end
 end

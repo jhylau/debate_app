@@ -22,6 +22,13 @@ FactoryGirl.define do
     factory :debate_with_winner do
       association :winner, factory: :user
     end
+
+    factory :debate_with_sides do
+      after(:create) do |debate|
+        FactoryGirl.create(:debate_side, side: 'yes', debate: debate)
+        FactoryGirl.create(:debate_side, side: 'no', debate: debate)
+      end
+    end
   end
 
   factory :debate_side do
