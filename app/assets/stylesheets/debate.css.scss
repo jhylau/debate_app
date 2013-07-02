@@ -17,19 +17,16 @@
 
 .debate-title {
   padding-left: 20px;
+  color: #D00000;
 }
 
-.title {
- 
-}
-
-.subtitle {
-  border:solid #D3D3D3;
-  background-color: #D3D3D3;
-  color: black;
+.debater-name {
+  color: red;
+  padding: 0px;
+  background-color: black;
   border-radius: 5px;
-  border-color: black;
 }
+
 
 .pagination {
   .page a {

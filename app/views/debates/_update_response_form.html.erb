@@ -13,5 +13,11 @@
           <%= f.submit 'Submit', class:"btn btn-danger", id: "submit-#{debate_side.side}-argument" %>
         </div>
       <% end %>
+    <% elsif current_user != debate_side.debater %>
+        <div class="span6 response-type">
+          <p>Waiting for response:</p>
+        </div>
+        <div class="span6 text-box response">
+        </div>
     <% end %>
 </div>

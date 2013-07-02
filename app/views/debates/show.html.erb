@@ -1,4 +1,4 @@
-<div class="hero-unit">
+<div class="hero-unit front-page-unit">
   <div class="row text-center">
     <% if current_user == @debate_page.no_side.user && @debate_page.yes_side.debater == nil %>
       <h4 class='temporary-header span3'>Waiting for contestant</h4>
@@ -13,7 +13,6 @@
     <% end %>
   </div>
 </div>
-
 <div class="row">
    <% if @debate_page.yes_side.user != nil %>
       <div class="yes-side">
@@ -26,4 +25,6 @@
         <%= render partial: 'update_response_form', locals: {debate_side: @debate_page.no_side} %>
       </div>
     <% end %>
+    <h4>Voting begins after conclusions are submitted</h4>
 </div>
+

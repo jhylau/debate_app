@@ -6,10 +6,10 @@
         </p>
       <% end %>
     <% else %>
-      <h3 class="span3"><%= debate_side.debater_name %></h3>
+      <h3 class="span3"><%= debate_side.debater_name + ": '#{debate_side.side}'" %></h3>
       <%= form_for [debate_side,debate_side.votes.new], :remote => true, :html => { :id => 'vote-form' } do |f| %>
         <p class=" span3">
-          <%= f.submit 'Vote', {class:"btn btn-primary", id:"vote-#{debate_side.side}"} %>
+          <%= f.submit 'Vote', {class:"btn btn-danger", id:"vote-#{debate_side.side}"} %>
             <br>
             <strong class="votes" <%= "id=votes-#{debate_side.side}" %>><%= debate_side.vote_count %></strong>
         </p>
