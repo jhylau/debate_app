@@ -8,6 +8,7 @@ class VotesController < ApplicationController
     
     respond_to do |format|
       if @new_vote.save
+        binding.pry
         format.html { redirect_to debate_path(@debate_side.debate) }
         format.json { render json: @debate_side }
       else

@@ -7,7 +7,7 @@ class Vote < ActiveRecord::Base
   validates_presence_of :debate_side_id, :user_id
   validates :debate_side_id, :uniqueness => {:scope=>:user_id,  :message => "can only have one vote per user" }
   validate :uniqueness_of_debate
-  validate :end_of_debate
+  # validate :end_of_debate
 
   def uniqueness_of_debate
     if debate_side
