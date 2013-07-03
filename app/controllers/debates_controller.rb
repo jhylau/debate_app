@@ -1,6 +1,11 @@
 class DebatesController < ApplicationController
   def show
     @debate_page = DebatePage.new(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.js
+      format.json { render json: @debate_page }
+    end
   end
 
   def index

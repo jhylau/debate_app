@@ -1,4 +1,8 @@
-<%- vote_count = @debate_side.votes.count %>
-var votes = <%= vote_count %>;
-var id = '<%= "votes-#{@debate_side.side}" %>';
-$("#" + id).text(votes);
+function updateVotes() {
+  <%- vote_count = @debate_side.votes.count %>
+  var votes = <%= vote_count %>;
+  var id = '<%= "votes-#{@debate_side.side}" %>';
+  $("#" + id).text(votes);
+});
+
+updateVotes;

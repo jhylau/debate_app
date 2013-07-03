@@ -43,6 +43,8 @@ end
 
 group :test do
   gem 'email_spec'
+  gem 'konacha'
+  gem 'ejs'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
