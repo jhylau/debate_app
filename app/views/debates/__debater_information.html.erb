@@ -7,7 +7,7 @@
       <% end %>
     <% else %>
       <h3 class="span3"><%= debate_side.debater_name + ": '#{debate_side.side}'" %></h3>
-      <%= form_for [debate_side,debate_side.votes.new], :html => { :id => 'vote-form' } do |f| %>
+      <%= form_for [debate_side,debate_side.votes.new], :html => { :id => "vote-form-#{debate_side.side}" } do |f| %>
         <p class=" span3">
           <%= f.submit 'Vote', {class:"btn btn-danger", id:"vote-#{debate_side.side}"} %>
             <br>
