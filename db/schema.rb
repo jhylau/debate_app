@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701043553) do
+ActiveRecord::Schema.define(:version => 20130704031736) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(:version => 20130701043553) do
   create_table "debates", :force => true do |t|
     t.integer  "topic_id"
     t.integer  "winner_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "feedbacks", :force => true do |t|
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

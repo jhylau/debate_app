@@ -7,6 +7,7 @@ DebateApp::Application.routes.draw do
   root :to => 'homes#index'
   
   resources :about, only: [:index]
+  resources :feedbacks, only: [:create]
 
   resources :profiles, only: [:show]
 
