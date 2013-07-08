@@ -30,9 +30,8 @@ feature 'debater can submit a conclusion', %q{
       fill_in 'Password', with: negative_debater.password
       click_button 'Sign In'
       visit debate_path(debate)
-      save_and_open_page
       within('.no-side') do
-        fill_in 'Conclusion', with: 'foo bar baz'
+        fill_in 'response_content', with: 'foo bar baz'
         click_button 'Submit'
       end
 

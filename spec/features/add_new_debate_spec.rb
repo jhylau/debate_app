@@ -13,21 +13,21 @@ describe 'adding a new debate' do
       login_as(admin)
     end
 
-    it 'shows a link for admin panel on index page when signed in as admin' do
-      page.should have_link("Admin")
+    it 'shows a link for create topic on index page when signed in as admin' do
+      page.should have_link("Create Topic")
     end
 
     it "can submit a new debate topic and subtopic" do
-      click_on ("Admin")
+      click_on ("Create Topic")
       fill_in 'Title', with: 'Topic'
       fill_in 'subtitle', with: 'subtopic'
       click_button 'Create'
       expect(page).to have_content('successfully created')
     end
 
-    it 'can only submit titles with no spaces' do
-      click_on ("Admin")
-      fill_in 'Title', with: 'Topic Topic'
+    it 'can only submit titles less than 30 characters' do
+      click_on ("Create Topic")
+      fill_in 'Title', with: 'Topic Topic more than 30 characters'
       fill_in 'subtitle', with: 'subtitle'
       click_button 'Create'
       expect(page).to have_content('not created')

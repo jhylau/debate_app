@@ -16,7 +16,7 @@ describe "User can join a debate" do
 
     it 'can find debates to participate in' do
       visit "/"
-      click_on "Participate"
+      click_on "Challenge"
       click_on "read-#{debate.id}"
       click_on "join-no"
       expect(page).to have_content('username')

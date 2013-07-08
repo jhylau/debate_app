@@ -30,7 +30,7 @@ feature 'debater can submit a rebuttal', %q{
 
       visit debate_path(debate)
       within('.no-side') do
-        fill_in 'Rebuttal', with: 'foo bar baz'
+        fill_in 'response_content', with: 'foo bar baz'
         click_button 'Submit'
       end
 

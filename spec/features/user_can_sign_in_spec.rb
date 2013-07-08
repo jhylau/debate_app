@@ -9,7 +9,7 @@ describe "visiting the home page" do
 
       it 'gets redirected to signin when viewing a debate' do
         visit root_path
-        click_on 'Participate'
+        click_on 'Challenge'
         page.should have_content("You need to sign in or sign up before continuing")
       end
   end

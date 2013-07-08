@@ -29,7 +29,7 @@ feature 'debater can submit a response', %q{
 
       visit debate_path(debate)
 
-      fill_in 'Argument', with: 'foo bar baz'
+      fill_in 'response_content', with: 'foo bar baz'
       click_button 'Submit'
 
       page.should have_content('foo bar baz')

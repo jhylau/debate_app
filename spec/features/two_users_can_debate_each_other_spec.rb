@@ -18,7 +18,7 @@ describe "User participating in a debate" do
     in_browser(:two) do
       login_as(user2)
       visit "/"
-      click_on "Participate"
+      click_on "Challenge"
       click_on "read-#{debate.id}"
       click_on "join-no"
       expect(page).to have_content("#{user1.username}")
