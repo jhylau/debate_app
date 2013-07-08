@@ -19,13 +19,28 @@ user3 = User.create! :username => 'jhylau', :email => 'jhylau1@gmail.com', :pass
 
 3.times do |i|
   debate = Debate.create(:topic_id => i + 1)
-  DebateSide.create(:debate_id => debate.id, side: 'yes', user_id: user1.id)
-  DebateSide.create(:debate_id => debate.id, side: 'no', user_id: user2.id)
+  ds_1 = DebateSide.new
+  ds_1.debate_id = debate.id
+  ds_1.side = 'yes'
+  ds_1.user_id = user1.id
+  ds_1.save
+  ds_2 = DebateSide.new
+  ds_2.debate_id = debate.id
+  ds_2.side = 'no'
+  ds_2.user_id = user2.id
+  ds_2.save
 end
 
 3.times do |i|
-  debate = Debate.create(:topic_id => i + 1)
-  DebateSide.create(:debate_id => debate.id, side: 'yes', user_id: user3.id)
-  DebateSide.create(:debate_id => debate.id, side: 'no')
+  debate2 = Debate.create(:topic_id => i + 1)
+  ds_3 = DebateSide.new
+  ds_3.debate_id = debate2.id
+  ds_3.side = 'yes'
+  ds_3.user_id = user3.id
+  ds_3.save
+  ds_4 = DebateSide.new
+  ds_4.debate_id = debate2.id
+  ds_4.side = 'no'
+  ds_4.save
 end
 
