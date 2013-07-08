@@ -8,9 +8,9 @@
 
 
 Category.create(:title => 'Politics')
-Topic.create(:title => 'Immigration',:subtitle => 'Immigration reform is needed', :category_id => 1, :image => File.open(File.join(Rails.root, '/assets/images/dream_rally_1.jpg')))
-Topic.create(:title => 'Obama',:subtitle => 'Obama is a good president', :category_id => 1, :image => File.open(File.join(Rails.root, '/assets/images/obama.jpg')))
-Topic.create(:title => 'Same-sex Marriage',:subtitle => 'Gay marriage should be legal', :category_id => 1, :image => File.open(File.join(Rails.root, '/assets/images/gay-marriage.jpg')))
+Topic.create(:title => 'Immigration',:subtitle => 'Immigration reform is needed', :category_id => 1, :image => File.open(File.join(Rails.root, '/app/assets/images/dream_rally_1.jpg')))
+Topic.create(:title => 'Obama',:subtitle => 'Obama is a good president', :category_id => 1, :image => File.open(File.join(Rails.root, '/app/assets/images/obama-debate.jpg')))
+Topic.create(:title => 'Same-sex Marriage',:subtitle => 'Gay marriage should be legal', :category_id => 1, :image => File.open(File.join(Rails.root, '/a[[/assets/images/gay-marriage.jpg')))
 
 admin = User.create! :username => 'Admin', :email => 'admin@gmail.com', :password => 'topsecret', role: 'admin'
 user1 = User.create! :username => 'Obama', :email => 'obama@gmail.com', :password => 'topsecret'
