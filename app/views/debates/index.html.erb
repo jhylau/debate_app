@@ -1,0 +1,12 @@
+<%#= paginate @debates, remote: true %>
+<div class = "row">
+  <ul class="thumbnails row-pad-left">
+    <% if @debates.empty? %>
+      <p><%= "No results returned" %></p>
+    <% else %>  
+      <% @debates.each do |d| %>
+        <%= render partial: 'debate_box', locals: {debate: d} %>
+      <% end %>
+    <% end%>
+  </ul>
+</div>

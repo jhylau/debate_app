@@ -1,0 +1,28 @@
+<div class="page-header header">
+  <h1><%= current_user.username %>'s profile</h1>
+</div>
+
+<div class="row">
+  <div class="stats span4 offset4">
+    <h4><%= "Number of debates: " + current_user.number_of_debates.to_s %></h4>
+    <h4><%= "Number of wins: " + current_user.number_of_wins.to_s %></h4>
+    <h4><%= "Global Ranking: " + current_user.global_ranking.to_s %></h4>
+  </div>
+</div>
+
+
+<div class="page-header sub-header">
+  <h3>Your current debates</h3>
+</div>
+
+<div class = "row">
+  <ul class="thumbnails row-pad-left">
+    <% if current_user.debates.empty? %>
+      <p><%= "No results returned" %></p>
+    <% else %>  
+      <% current_user.debates.each do |d| %>
+        <%= render partial: 'debate_box', locals: {debate: d} %>
+      <% end %>
+    <% end%>
+  </ul>
+</div>
