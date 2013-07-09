@@ -6,8 +6,8 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: 'You have joined a debate')
   end
 
-  def feedback_email(user)
+  def feedback_email(user, feedback)
     @user = user
-    mail(to: 'jhylau1@gmail.com', subject: "Feedback for DebateMe")
+    mail(to: 'jhylau1@gmail.com', subject: "Feedback for DebateMe", body: "hi")
   end
 end
