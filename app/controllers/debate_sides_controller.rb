@@ -5,7 +5,7 @@ class DebateSidesController < ApplicationController
     
     @debate_side.user = current_user
     if @debate_side.save
-      UserMailer.join_debate_email(current_user)
+      UserMailer.join_debate_email(current_user).deliver
       @debate = Debate.where(id: params[:debate_id]).first
       redirect_to debate_path(@debate)
     else
