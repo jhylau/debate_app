@@ -272,6 +272,7 @@ DEPENDENCIES
   kaminari
   konacha
   launchy
+  mail
   pg
   pg_search
   pry-rails
