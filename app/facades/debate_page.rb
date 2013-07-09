@@ -17,9 +17,6 @@ class DebatePage
     @title ||= @debate.topic.title
   end
 
-  def image_url
-    @image_url ||= @debate.topic.image_url
-  end
   def subtitle
     @subtitle ||= @debate.topic.subtitle
   end

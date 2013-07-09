@@ -22,13 +22,7 @@ class Debate < ActiveRecord::Base
   paginates_per 6
 
   def has_one_user?
-    user_number = 0
-    if self.debate_sides.first.user != nil
-      user_number = user_number + 1
-    end
-    if self.debate_sides.last.user != nil
-      user_number = user_number + 1
-    end
+    user_number = users.count
     user_number == 1 ? true : false
   end
 
