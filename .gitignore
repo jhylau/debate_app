@@ -16,3 +16,4 @@
 
 #ignore passwords
 /config/application.yml
+.env

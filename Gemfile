@@ -18,6 +18,7 @@ gem 'pg_search'
 gem 'kaminari'
 gem 'rails_admin'
 gem 'mail'
+gem 'fog'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -40,6 +41,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'launchy'
   gem 'bullet'
+  gem 'dotenv-rails'
 end
 
 group :test do
